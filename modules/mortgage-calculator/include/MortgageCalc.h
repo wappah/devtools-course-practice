@@ -12,7 +12,7 @@ class MortgageCalc {
     double monthlyPayment;
     double monthlyRate;
  public:
-    MortgageCalc(int _cost, int _downPayment, 
+    MortgageCalc(int _cost, int _downPayment,
         int _creditTerm, double _interestRate);
     void calc();
     void setCost(const int& cost);
