@@ -1,7 +1,9 @@
 // Copyright 2020 Petrov Anton
 
-#include "include/MortgageCalc.h"
 #include <gtest/gtest.h>
+
+#include "include/MortgageCalc.h"
+
 TEST(CalculatorTest, Can_Set_Cost) {
     // Arrange
     int num = 1000000;

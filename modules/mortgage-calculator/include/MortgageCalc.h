@@ -11,8 +11,9 @@ class MortgageCalc {
     int totalFee;
     double monthlyPayment;
     double monthlyRate;
-public:
-    MortgageCalc(int _cost, int _downPayment, int _creditTerm, double _interestRate);
+ public:
+    MortgageCalc(int _cost, int _downPayment, 
+        int _creditTerm, double _interestRate);
     void calc();
     void setCost(const int& cost);
     void setDownPayment(const int& cost);
