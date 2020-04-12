@@ -1,16 +1,11 @@
 // Copyright 2020 Petrov Anton
 
 #include "include/MortgageCalc.h"
+#include <cmath>
 #include <iostream>
 using namespace std;
 
-MortgageCalc::MortgageCalc() {
-    int totalF = 0;
-    double monthlyPayment = 0;
-    double monthlyRate = 0;
-}
-
-MortgageCalc::MortgageCalc(int _cost, int _downPayment, int _creditTerm, double _interestRate):cost(_cost), downPayment(_downPayment),creditTerm(_creditTerm),interestRate(_interestRate){}
+MortgageCalc::MortgageCalc(int _cost, int _downPayment, int _creditTerm, double _interestRate) :cost(_cost), downPayment(_downPayment), creditTerm(_creditTerm), interestRate(_interestRate) {}
 
 int MortgageCalc::getCost() {
     return cost;

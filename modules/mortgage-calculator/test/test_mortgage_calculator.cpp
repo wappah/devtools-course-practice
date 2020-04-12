@@ -3,90 +3,93 @@
 #include "include/MortgageCalc.h"
 #include <gtest/gtest.h>
 TEST(CalculatorTest, Can_Set_Cost) {
-    //Arrange
+    // Arrange
     int num = 1000000;
-    //Act
+    // Act
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setCost(num);
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getCost(), num);
 }
 
 TEST(CalculatorTest, Can_Set_DownPayment) {
-    //Arrange
+    // Arrange
     int num = 1000000;
-    //Act
+    // Act
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setDownPayment(num);
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getDownPayment(), num);
 }
 
 TEST(CalculatorTest, Can_Set_CreditTerm) {
-    //Arrange
+    // Arrange
     int num = 1000000;
-    //Act
+    // Act
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setCreditTerm(num);
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getCreditTerm(), num);
 }
 
 TEST(CalculatorTest, Can_Set_InterestRate) {
-    //Arrange
+    // Arrange
     int num = 10;
-    //Act
+    // Act
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setInterestRate(num);
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getInterestRate(), num);
 }
 
 TEST(CalculatorTest, Can_Get_TotalFee) {
-    //Arrange
+    // Arrange
     int num = 3872038;
-    //Act
+    // Act
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getTotalFee(), num);
 }
 
 TEST(CalculatorTest, Can_Get_MonthlyPayment) {
-    //Arrange
+    // Arrange
     int num = 32266;
-    //Act
+    // Act
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
-    //Assert
+    // Assert
     EXPECT_EQ(mortgage.getMonthlyPayment(), num);
 }
 
 TEST(CalculatorTest, Can_Get_MonthlyRate) {
-    //Arrange
+    // Arrange
     double num = 0.0125;
-    //Act
+    // Act
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
-    //Assert
-    EXPECT_FLOAT_EQ(mortgage.getMonthlyRate(), num);
+    // Assert
+    EXPECT_DOUBLE_EQ(mortgage.getMonthlyRate(), num);
 }
 
-TEST(CalculatorTest, Can_Calculation_With_Zero_Numbers){
-    //Arrange
-    double num = 0.0125;
-    //Act
+TEST(CalculatorTest, Can_Calculation_With_Zero_Numbers) {
+    // Arrange
+    // Act
     MortgageCalc mortgage(0, 0, 0, 0);
-    //Assert
-    SUCCEED(mortgage.calc());
+    // Assert
+    ASSERT_TRUE(mortgage.getTotalFee());
 }
 
-TEST(CalculatorTest, Is_Working_Without_Parametrs) {
-    //Arrange
-    //Act
-    MortgageCalc mortgage;
-    //Assert
-    SUCCEED(mortgage.calc());
+TEST(CalculatorTest, Is_Copy_Constructort_Working_Fine) {
+    // Arrange
+    // Act
+    MortgageCalc mortgage(1, 1, 1, 1);
+    MortgageCalc mortgage2(mortgage);
+    // Assert
+    EXPECT_EQ(mortgage2.getCost(), mortgage.getCost());
+    EXPECT_EQ(mortgage2.getDownPayment(), mortgage.getDownPayment());
+    EXPECT_EQ(mortgage2.getCreditTerm(), mortgage.getCreditTerm());
+    EXPECT_DOUBLE_EQ(mortgage2.getInterestRate(), mortgage.getInterestRate());
 }
 
 TEST(CalculatorTest, Create_Copy_Constructor) {
