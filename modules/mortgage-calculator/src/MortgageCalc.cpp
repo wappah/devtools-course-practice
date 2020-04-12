@@ -5,63 +5,63 @@
 using namespace std;
 
 MortgageCalc::MortgageCalc() {
-	int totalF = 0;
-	double monthlyPayment = 0;
-	double monthlyRate = 0;
+    int totalF = 0;
+    double monthlyPayment = 0;
+    double monthlyRate = 0;
 }
 
 MortgageCalc::MortgageCalc(int _cost, int _downPayment, int _creditTerm, double _interestRate):cost(_cost), downPayment(_downPayment),creditTerm(_creditTerm),interestRate(_interestRate){}
 
 int MortgageCalc::getCost() {
-	return cost;
+    return cost;
 }
 
 int MortgageCalc::getDownPayment() {
-	return downPayment;
+    return downPayment;
 }
 
 int MortgageCalc::getCreditTerm() {
-	return creditTerm;
+    return creditTerm;
 }
 
 double MortgageCalc::getInterestRate(){
-	return interestRate;
+    return interestRate;
 }
 
 int MortgageCalc::getTotalFee(){
-	return totalFee;
+    return totalFee;
 }
 
 double MortgageCalc::getMonthlyRate() {
-	return monthlyRate;
+    return monthlyRate;
 }
 
 int MortgageCalc::getMonthlyPayment() {
-	return monthlyPayment;
+    return monthlyPayment;
 }
 
 void MortgageCalc::setCost(const int& cost) {
-	this->cost = cost;
+    this->cost = cost;
 }
 
 void MortgageCalc::setDownPayment(const int& downPayment) {
-	this->downPayment = downPayment;
+    this->downPayment = downPayment;
 }
 
 void MortgageCalc::setCreditTerm(const int& creditTerm) {
-	this->creditTerm = creditTerm;
+    this->creditTerm = creditTerm;
 }
 
 void MortgageCalc::setInterestRate(const double& interestRate) {
-	this->interestRate = interestRate;
+    this->interestRate = interestRate;
 }
 
 void MortgageCalc::calc() {
-	cost -= downPayment;
-	creditTerm *= 12;
-	monthlyRate = ((interestRate) / 100) / 12;
-	double tmp;
-	tmp = pow((1 + monthlyRate), creditTerm);
-	monthlyPayment = cost * monthlyRate * (tmp / (tmp - 1));
+    cost -= downPayment;
+    creditTerm *= 12;
+    monthlyRate = ((interestRate) / 100) / 12;
+    double tmp;
+    tmp = pow((1 + monthlyRate), creditTerm);
+    monthlyPayment = cost * monthlyRate * (tmp / (tmp - 1));
     totalFee = monthlyPayment * creditTerm;
 }
