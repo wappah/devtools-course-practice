@@ -9,31 +9,31 @@ MortgageCalc::MortgageCalc(int _cost, int _downPayment,
     downPayment(_downPayment), creditTerm(_creditTerm),
     interestRate(_interestRate) {}
 
-int MortgageCalc::getCost() {
+int MortgageCalc::getCost()const {
     return cost;
 }
 
-int MortgageCalc::getDownPayment() {
+int MortgageCalc::getDownPayment()const {
     return downPayment;
 }
 
-int MortgageCalc::getCreditTerm() {
+int MortgageCalc::getCreditTerm()const {
     return creditTerm;
 }
 
-double MortgageCalc::getInterestRate() {
+double MortgageCalc::getInterestRate()const {
     return interestRate;
 }
 
-int MortgageCalc::getTotalFee() {
+int MortgageCalc::getTotalFee()const {
     return totalFee;
 }
 
-double MortgageCalc::getMonthlyRate() {
+double MortgageCalc::getMonthlyRate()const {
     return monthlyRate;
 }
 
-int MortgageCalc::getMonthlyPayment() {
+int MortgageCalc::getMonthlyPayment()const {
     return monthlyPayment;
 }
 

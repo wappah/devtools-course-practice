@@ -19,13 +19,13 @@ class MortgageCalc {
     void setDownPayment(const int& cost);
     void setCreditTerm(const int& cost);
     void setInterestRate(const double& cost);
-    int getCost();
-    int getDownPayment();
-    int getCreditTerm();
-    double getInterestRate();
-    int getTotalFee();
-    double getMonthlyRate();
-    int getMonthlyPayment();
+    int getCost()const;
+    int getDownPayment()const;
+    int getCreditTerm()const;
+    double getInterestRate()const;
+    int getTotalFee()const;
+    double getMonthlyRate()const;
+    int getMonthlyPayment()const;
 };
 
 #endif  // MODULES_MORTGAGE_CALCULATOR_INCLUDE_MORTGAGECALC_H_
