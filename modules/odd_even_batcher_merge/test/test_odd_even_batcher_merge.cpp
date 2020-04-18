@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 #include <vector>
 #include <random>
+#include <algorithm>
 #include <ctime>
 #include "include/odd_even_batcher_merge.h"
 
@@ -33,7 +34,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_One_Size_Element) {
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_With_Negative_Elements) {
-    std::vector<int> vec1{ -17,-3, 5, 2 };
+    std::vector<int> vec1{ -17, -3, 5, 2 };
     std::vector<int> vec2{ -11, 3, 5, 23, 51 };
     std::vector<int> res{ -17, -11, -3, 2, 5, 3, 5, 23, 51 };
 
