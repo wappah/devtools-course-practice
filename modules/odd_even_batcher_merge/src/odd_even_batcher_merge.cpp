@@ -39,8 +39,8 @@ std::vector<int> shuffle(const std::vector<int>& vec) {
 std::vector<int> merge_odd_even(const std::vector<int>& vec1,
     const std::vector<int>& vec2) {
     std::vector<int> res(vec1.size() + vec2.size());
-    std::size_t j = 0, k = 0,l = 0;
- 
+    std::size_t j = 0, k = 0, l = 0;
+
     while (j < vec1.size() && k < vec2.size()) {
         if (vec1[j] < vec2[k])
             res[l++] = vec1[j++];
@@ -55,7 +55,8 @@ std::vector<int> merge_odd_even(const std::vector<int>& vec1,
     return res;
 }
 
-std::vector<int> unshuffle(const std::vector<int>& odd, const std::vector<int>& even) {
+std::vector<int> unshuffle(const std::vector<int>& odd,
+    const std::vector<int>& even) {
     std::vector<int> res(odd.size() + even.size());
     std::size_t j = 0, k = 0, l = 0;
 
