@@ -3,12 +3,13 @@
 #include "include/odd_even_batcher_merge.h"
 #include <stdexcept>
 #include <iostream>
+#include <algorithm>
 #include <vector>
 
 std::vector<int> merge_batcher(std::vector<int> vec1,
     std::vector<int> vec2) {
-    shuffle(vec1);
-    shuffle(vec2);
+    vec1 = shuffle(vec1);
+    vec2 = shuffle(vec2);
     std::size_t size_odd1 = vec1.size() / 2 + vec1.size() % 2;
     std::size_t size_odd2 = vec2.size() / 2 + vec2.size() % 2;
 
@@ -24,23 +25,21 @@ std::vector<int> merge_batcher(std::vector<int> vec1,
     return res;
 }
 
-void shuffle (std::vector<int>& vec) {
+std::vector<int> shuffle(const std::vector<int>& vec) {
     std::vector<int> tmp(vec.size());
-    for (size_t i = 0; i < vec.size() / 2 + vec.size() % 2; i++) {
+    for (std::size_t i = 0; i < vec.size() / 2 + vec.size() % 2; i++) {
         tmp[i] = vec[2 * i];
     }
-    for (size_t i = 1; i < vec.size(); i += 2) {
+    for (std::size_t i = 1; i < vec.size(); i += 2) {
         tmp[vec.size() / 2 + vec.size() % 2 + i / 2] = vec[i];
     }
-    for (size_t i = 0; i < vec.size(); i++) {
-        vec[i] = tmp[i];
-    }
+    return tmp;
 }
 
 std::vector<int> merge_odd_even(const std::vector<int>& vec1,
     const std::vector<int>& vec2) {
     std::vector<int> res(vec1.size() + vec2.size());
-    size_t j = 0, k = 0,l = 0;
+    std::size_t j = 0, k = 0,l = 0;
  
     while (j < vec1.size() && k < vec2.size()) {
         if (vec1[j] < vec2[k])
@@ -75,8 +74,3 @@ std::vector<int> unshuffle(const std::vector<int>& odd, const std::vector<int>& 
 
     return res;
 }
-
-//for (auto& a : merge_odd) {
-//    std::cout << a << ' ';
-//}
-//std::cout << std::endl << std::endl;
