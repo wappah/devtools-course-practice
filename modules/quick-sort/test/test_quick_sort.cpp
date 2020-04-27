@@ -32,14 +32,11 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
   ASSERT_TRUE(ex1.matrix.empty());
 }
 
-TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
   //Arrange&Act
-  QuickSort ex1(5);
+  QuickSort Elementary(10);
+  Elementary.matrix= Elementary.GetRandom(Elementary);
   //Assert
-  ASSERT_FALSE(ex1.matrix.empty());
+  ASSERT_FALSE(Elementary.matrix.empty());
 }
 
-//TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
-//  //Arrange&Act&Assert
-//  ASSERT_ANY_THROW(Sort(NotSorted));
-//}

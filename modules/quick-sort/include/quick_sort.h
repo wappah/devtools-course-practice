@@ -13,8 +13,7 @@ public:
    QuickSort();
    QuickSort(int _size);
    int GetSize();
- // std::vector<int>GetRandom(QuickSort Elementary);
-   //std::vector<int> Sort(QuickSort NotSorted);
+   std::vector<int>GetRandom(QuickSort Elementary);
 };
 
 #endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_
