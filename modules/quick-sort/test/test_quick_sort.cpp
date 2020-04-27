@@ -19,24 +19,32 @@ TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Positive_Parameters) {
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Return_Size) {
-  //Arrange&Act
+  // Arrange&Act
   QuickSort ex1(5);
-  //Assert
+  // Assert
   ASSERT_EQ(5, ex1.GetSize());
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
-  //Arrange&Act
+  // Arrange&Act
   QuickSort ex1(5);
-  //Assert
+  // Assert
   ASSERT_TRUE(ex1.matrix.empty());
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
-  //Arrange&Act
+  // Arrange
   QuickSort Elementary(10);
+  // Act
   Elementary.matrix= Elementary.GetRandom(Elementary);
   //Assert
   ASSERT_FALSE(Elementary.matrix.empty());
+}
+
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+  // Arrange&Act
+  QuickSort Elementary(10);
+  // Assert
+  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 }
 
