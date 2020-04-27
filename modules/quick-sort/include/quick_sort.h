@@ -17,4 +17,4 @@ class QuickSort {
   std::vector<int>Sort(QuickSort Elementary);
 };
 
-#endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_ 
+#endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_

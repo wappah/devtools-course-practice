@@ -36,9 +36,16 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
   // Arrange
   QuickSort Elementary(10);
   // Act
-  Elementary.matrix= Elementary.GetRandom(Elementary);
-  //Assert
+  Elementary.matrix = Elementary.GetRandom(Elementary);
+  // Assert
   ASSERT_FALSE(Elementary.matrix.empty());
+}
+
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+  // Arrange&Act
+  QuickSort Elementary(10);
+  // Assert
+  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
