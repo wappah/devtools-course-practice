@@ -41,6 +41,7 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
   ASSERT_FALSE(Elementary.matrix.empty());
 }
 
+
 // TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
 //  // Arrange
 //  QuickSort Elementary(5);
