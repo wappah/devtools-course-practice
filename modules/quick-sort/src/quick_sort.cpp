@@ -3,6 +3,7 @@
 #include "include/quick_sort.h"
 #include <random>
 #include <ctime>
+#include <vector>
 
 QuickSort::QuickSort() {
   size = 0;
