@@ -42,15 +42,11 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
-  // Arrange&Act
-  QuickSort Elementary(10);
-  // Assert
-  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
-}
-
-TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
-  // Arrange&Act
-  QuickSort Elementary(10);
+  // Arrange
+  QuickSort Elementary(5);
+  Elementary.matrix.resize(Elementary.size, 0);
+  //Act
+  Elementary.matrix = { 1, 4, 3, 2, 1 };
   // Assert
   ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 }
