@@ -12,6 +12,7 @@ class QuickSort {
    std::vector<int> matrix;
 
    QuickSort();
+   QuickSort(int _size);
 
 };
 
