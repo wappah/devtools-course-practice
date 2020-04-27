@@ -1,3 +1,7 @@
-#Copyright 2020 Golovanova Elena
+//Copyright 2020 Golovanova Elena
 
-#include "quick_sort.h"
+#include "include/quick_sort.h"
+
+QuickSort::QuickSort(){
+  size = 0;
+}
