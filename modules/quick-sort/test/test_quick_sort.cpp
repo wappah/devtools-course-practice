@@ -1,4 +1,4 @@
-//Copyright 2020 Golovanova Elena
+// Copyright 2020 Golovanova Elena
 
 #include <gtest/gtest.h>
 #include "include/quick_sort.h"
@@ -25,3 +25,21 @@ TEST(Golovanova_Elena_QuickSortTest, Return_Size) {
   ASSERT_EQ(5, ex1.GetSize());
 }
 
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
+  //Arrange&Act
+  QuickSort ex1(5);
+  //Assert
+  ASSERT_TRUE(ex1.matrix.empty());
+}
+
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
+  //Arrange&Act
+  QuickSort ex1(5);
+  //Assert
+  ASSERT_FALSE(ex1.matrix.empty());
+}
+
+//TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
+//  //Arrange&Act&Assert
+//  ASSERT_ANY_THROW(Sort(NotSorted));
+//}
