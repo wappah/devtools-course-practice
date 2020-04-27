@@ -13,3 +13,8 @@ TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Negative_Parameters) {
   ASSERT_ANY_THROW(QuickSort ex1(-1));
 }
 
+TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Positive_Parameters) {
+  // Arrange&Act&Assert
+  ASSERT_NO_THROW(QuickSort ex1(5));
+}
+

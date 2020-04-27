@@ -9,5 +9,5 @@ QuickSort::QuickSort(){
 QuickSort::QuickSort(int _size) {
   if (_size < 0)
     throw "Size is negative";
-  //size = _size;
+  size = _size;
 }
