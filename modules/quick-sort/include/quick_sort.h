@@ -12,8 +12,8 @@ class QuickSort {
   std::vector<int> matrix;
   QuickSort();
   explicit QuickSort(int _size);
+  QuickSort(int _size, int element);
   int GetSize();
-  std::vector<int>GetRandom(QuickSort Elementary);
   std::vector<int>Sort(QuickSort Elementary);
 };
 

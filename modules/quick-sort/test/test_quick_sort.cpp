@@ -5,59 +5,39 @@
 
 TEST(Golovanova_Elena_QuickSortTest, Create_Empty_Class) {
   // Arrange&Act&Assert
-  ASSERT_NO_THROW(QuickSort ex1);
+  ASSERT_NO_THROW(QuickSort Elementary);
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Negative_Parameters) {
   // Arrange&Act&Assert
-  ASSERT_ANY_THROW(QuickSort ex1(-1));
+  ASSERT_ANY_THROW(QuickSort Elementary(-1));
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Positive_Parameters) {
   // Arrange&Act&Assert
-  ASSERT_NO_THROW(QuickSort ex1(5));
+  ASSERT_NO_THROW(QuickSort Elementary(5));
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Return_Size) {
   // Arrange&Act
-  QuickSort ex1(5);
+  QuickSort Elementary(5);
   // Assert
-  ASSERT_EQ(5, ex1.GetSize());
+  ASSERT_EQ(5, Elementary.GetSize());
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
   // Arrange&Act
-  QuickSort ex1(5);
-  // Assert
-  ASSERT_TRUE(ex1.matrix.empty());
-}
-
-TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
-  // Arrange
-  QuickSort Elementary(10);
-  // Act
-  Elementary.matrix = Elementary.GetRandom(Elementary);
-  // Assert
-  ASSERT_FALSE(Elementary.matrix.empty());
-}
-
-
-TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
-  // Arrange
   QuickSort Elementary(5);
-  Elementary.matrix.resize(Elementary.size, 0);
-  // Act
-  Elementary.matrix = { 1, 4, 3, 2, 1 };
   // Assert
   ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 }
-//
-// TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
-//  // Arrange
-//  QuickSort Elementary(5);
-//  Elementary.matrix.resize(Elementary.size, 0);
-//  //Act
-//  Elementary.matrix = { 1, 4, 9, 2, 1 };
-//  // Assert
-//  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
-//}
+
+ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+  // Arrange
+  QuickSort Elementary(5, 0);
+  // Act
+  Elementary.matrix = { 4, 6, 8, 9, 1};
+  // Assert
+  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
+}
+
