@@ -41,7 +41,7 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
   ASSERT_FALSE(Elementary.matrix.empty());
 }
 
-//TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+// TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
 //  // Arrange
 //  QuickSort Elementary(5);
 //  Elementary.matrix.resize(Elementary.size, 0);
@@ -51,7 +51,7 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Empty) {
 //  ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 //}
 //
-//TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
+// TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
 //  // Arrange
 //  QuickSort Elementary(5);
 //  Elementary.matrix.resize(Elementary.size, 0);
