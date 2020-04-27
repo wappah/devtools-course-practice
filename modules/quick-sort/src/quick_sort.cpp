@@ -11,3 +11,7 @@ QuickSort::QuickSort(int _size) {
     throw "Size is negative";
   size = _size;
 }
+
+int QuickSort::GetSize() {
+  return size;
+}

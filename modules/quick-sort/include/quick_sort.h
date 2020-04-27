@@ -7,13 +7,13 @@
 #include <vector>
 
 class QuickSort {
- public:
+ private:
    int size;
    std::vector<int> matrix;
-
+ public:
    QuickSort();
    QuickSort(int _size);
-
+   int GetSize();
 };
 
 #endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_

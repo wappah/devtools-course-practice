@@ -18,3 +18,10 @@ TEST(Golovanova_Elena_QuickSortTest, Create_Class_With_Positive_Parameters) {
   ASSERT_NO_THROW(QuickSort ex1(5));
 }
 
+TEST(Golovanova_Elena_QuickSortTest, Return_Size) {
+  //Arrange&Act
+  QuickSort ex1(5);
+  //Assert
+  ASSERT_EQ(5, ex1.GetSize());
+}
+
