@@ -32,7 +32,7 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
   ASSERT_ANY_THROW(Elementary.Sort(Elementary));
 }
 
- TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
   // Arrange
   QuickSort Elementary(5, 0);
   // Act
