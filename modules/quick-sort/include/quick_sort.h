@@ -15,7 +15,7 @@ class QuickSort {
   QuickSort(int _size, int element);
   int GetSize();
   std::vector<int>main(QuickSort Elementary);
-  void QSort(std::vector<int> &_matrix, int _first, int _last);
+  void QSort(std::vector <int>& _matrix, int _first, int _last);
 };
 
 #endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_
