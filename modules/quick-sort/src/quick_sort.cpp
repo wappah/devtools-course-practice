@@ -25,7 +25,7 @@ std::vector<int> QuickSort::GetVector() {
   return matrix;
 }
 
-int QuickSort::GetIndex(std::vector<int>& _matrix, int _first, int _last) const{
+int QuickSort::GetIndex(std::vector<int>& _matrix, int _first, int _last) {
   // QuickSort Result(_matrix);
   int first, last, supporting;
   // supporting = Result.matrix[_first];
@@ -48,7 +48,7 @@ int QuickSort::GetIndex(std::vector<int>& _matrix, int _first, int _last) const{
   }
 }
 
-std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _last) const {
+std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _last) {
   int middle;
   // QuickSort Result(_matrix);
   if (_first < _last) {
@@ -60,8 +60,6 @@ std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _la
     QSort(_matrix, middle + 1, _last);
   }
   // return Result.matrix;
-  for (int i = 0; i < _last; i++)
-    std::cout << _matrix[i];
     /*if (_matrix[i] <= _matrix[i + 1])
     throw "vector is sorted";*/
   return _matrix;
