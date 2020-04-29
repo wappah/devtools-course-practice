@@ -17,7 +17,7 @@ QuickSort::QuickSort(std::vector<int>_vector) {
   if (_vector.size() < 0)
        throw "Size is negative";
   matrix.resize(_vector.size(), 0);
-  for (int i = 0; i < _vector.size(); i++)
+  for (unsigned int i = 0; i < _vector.size(); i++)
     matrix[i] = _vector[i];
 }
 
@@ -107,7 +107,7 @@ std::vector<int> QuickSort::main(QuickSort Elementary) {
     throw "Vector is sorted";
   std::vector<int> Result = QSort(Elementary.matrix, 0, end_index);
   Elementary.matrix.clear();
-  for (int i = 0; i < Result.size(); i++)
+  for (unsigned int i = 0; i < Result.size(); i++)
     if (Result[i] > Result[i + 1])
       throw "Vector is sorted";
   return Result;
