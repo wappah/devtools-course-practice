@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 #include "include/quick_sort.h"
+#include <vector>
 
 TEST(Golovanova_Elena_QuickSortTest, Create_Empty_Class) {
   // Arrange&Act&Assert
