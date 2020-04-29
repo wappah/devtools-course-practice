@@ -106,9 +106,9 @@ std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _la
 std::vector<int> QuickSort::main(QuickSort Elementary) {
   if (Elementary.matrix.empty())
     throw "Matrix is empty";
-  int flag = 0;
+  unsigned int flag = 0;
   //int end_index = Elementary.matrix.size() - 1;
-  for (int i = 0; i < Elementary.matrix.size()-1; i++)
+  for (unsigned int i = 0; i < Elementary.matrix.size()-1; i++)
     if (Elementary.matrix[i] <= Elementary.matrix[i + 1])
       flag++;
   if (flag == Elementary.matrix.size()-1)
