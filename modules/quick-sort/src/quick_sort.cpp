@@ -25,38 +25,46 @@ std::vector<int> QuickSort::GetVector() {
   return matrix;
 }
 
-int QuickSort::GetIndex(const std::vector<int>& _matrix, int _first, int _last) {
-  QuickSort Result(_matrix);
+int QuickSort::GetIndex(std::vector<int>& _matrix, int _first, int _last) const{
+  // QuickSort Result(_matrix);
   int first, last, supporting;
-  supporting = Result.matrix[_first];
+  // supporting = Result.matrix[_first];
+  supporting = _matrix[_first];
   first = _first;
   last = _last;
   while (true) {
-    while (Result.matrix[first] < supporting) {
+    // while (Result.matrix[first] < supporting) {
+    while (_matrix[first] < supporting) {
       first++;
     }
-    while (Result.matrix[last] > supporting){
+    // while (Result.matrix[last] > supporting){
+    while (_matrix[last] > supporting) {
       last--;
     }
     if (first >= last)
       return last;
-    std::swap(Result.matrix[first], Result.matrix[last]);
+    // std::swap(Result.matrix[first], Result.matrix[last]);
+    std::swap(_matrix[first], _matrix[last]);
   }
 }
 
-std::vector<int> QuickSort::QSort(const std::vector<int>& _matrix, int _first, int _last) {
+std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _last) const {
   int middle;
-  QuickSort Result(_matrix);
+  // QuickSort Result(_matrix);
   if (_first < _last) {
-    middle = GetIndex(Result.matrix, _first, _last);
+    /*middle = GetIndex(Result.matrix, _first, _last);
     QSort(Result.matrix, _first, middle);
-    QSort(Result.matrix, middle+1, _last);
+    QSort(Result.matrix, middle+1, _last);*/
+    middle = GetIndex(_matrix, _first, _last);
+    QSort(_matrix, _first, middle);
+    QSort(_matrix, middle + 1, _last);
   }
-  return Result.matrix;
-  /*for (int i = 0; i < _last; i++)
-    std::cout << Result.matrix[i];*/
-    /*if (Elementary.matrix[i] <= Elementary.matrix[i + 1])
-    throw "Vector is sorted";*/
+  // return Result.matrix;
+  for (int i = 0; i < _last; i++)
+    std::cout << _matrix[i];
+    /*if (_matrix[i] <= _matrix[i + 1])
+    throw "vector is sorted";*/
+  return _matrix;
 }
 
 //std::vector<int> QuickSort::QSort(const std::vector<int>& _matrix, int _first, int _last) {
@@ -99,17 +107,17 @@ std::vector<int> QuickSort::main(QuickSort Elementary) {
   if (Elementary.matrix.empty())
     throw "Matrix is empty";
   int flag = 0;
-  int end_index = Elementary.matrix.size() - 1;
-  for (int i = 0; i < end_index; i++)
+  //int end_index = Elementary.matrix.size() - 1;
+  for (int i = 0; i < Elementary.matrix.size()-1; i++)
     if (Elementary.matrix[i] <= Elementary.matrix[i + 1])
       flag++;
-  if (flag == end_index)
+  if (flag == Elementary.matrix.size()-1)
     throw "Vector is sorted";
-  std::vector<int> Result = QSort(Elementary.matrix, 0, end_index);
-  Elementary.matrix.clear();
-  for (unsigned int i = 0; i < Result.size(); i++)
+  std::vector<int> Result = QSort(Elementary.matrix, 0, Elementary.matrix.size()-1);
+  //Elementary.matrix.clear();
+  for (unsigned long int i = 0; i < Result.size() - 1 ; i++)
     if (Result[i] > Result[i + 1])
-      throw "Vector is sorted";
+      throw "Vector is not sorted";
   return Result;
   //Elementary.matrix.clear();
 }
