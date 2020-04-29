@@ -101,19 +101,38 @@ std::vector<int> QuickSort::QSort(std::vector<int>& _matrix, int _first, int _la
   return Result.matrix;
 }*/
 
-std::vector<int> QuickSort::main(QuickSort Elementary) {
-  if (Elementary.matrix.empty())
+//std::vector<int> QuickSort::main(QuickSort Elementary) {
+//  if (Elementary.matrix.empty())
+//    throw "Matrix is empty";
+//  unsigned int flag = 0;
+//  //int end_index = Elementary.matrix.size() - 1;
+//  for (unsigned int i = 0; i < Elementary.matrix.size()-1; i++)
+//    if (Elementary.matrix[i] <= Elementary.matrix[i + 1])
+//      flag++;
+//  if (flag == Elementary.matrix.size()-1)
+//    throw "Vector is sorted";
+//  std::vector<int> Result = QSort(Elementary.matrix, 0, Elementary.matrix.size()-1);
+//  //Elementary.matrix.clear();
+//  for (unsigned long int i = 0; i < Result.size() - 1 ; i++)
+//    if (Result[i] > Result[i + 1])
+//      throw "Vector is not sorted";
+//  return Result;
+//  //Elementary.matrix.clear();
+//}
+
+std::vector<int> QuickSort::main(QuickSort * Elementary) {
+  if (Elementary->matrix.empty())
     throw "Matrix is empty";
   unsigned int flag = 0;
   //int end_index = Elementary.matrix.size() - 1;
-  for (unsigned int i = 0; i < Elementary.matrix.size()-1; i++)
-    if (Elementary.matrix[i] <= Elementary.matrix[i + 1])
+  for (unsigned int i = 0; i < Elementary->matrix.size() - 1; i++)
+    if (Elementary->matrix[i] <= Elementary->matrix[i + 1])
       flag++;
-  if (flag == Elementary.matrix.size()-1)
+  if (flag == Elementary->matrix.size() - 1)
     throw "Vector is sorted";
-  std::vector<int> Result = QSort(Elementary.matrix, 0, Elementary.matrix.size()-1);
+  std::vector<int> Result = QSort(Elementary->matrix, 0, Elementary->matrix.size() - 1);
   //Elementary.matrix.clear();
-  for (unsigned long int i = 0; i < Result.size() - 1 ; i++)
+  for (unsigned long int i = 0; i < Result.size() - 1; i++)
     if (Result[i] > Result[i + 1])
       throw "Vector is not sorted";
   return Result;
