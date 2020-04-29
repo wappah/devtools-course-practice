@@ -42,19 +42,11 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
   ASSERT_ANY_THROW(Elementary.main(Elementary));
 }
 
-TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Not_Sorted) {
+TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
   // Arrange&Act
-  std::vector<int> example = { 4, 6, 6, 9, 1};
+  std::vector<int> example = {5, 6, 1, 8, 9, 3, 4};
   QuickSort Elementary(example);
   // Assert
   ASSERT_NO_THROW(Elementary.main(Elementary));
 }
-
-//TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
-//  // Arrange&Act
-//  std::vector<int> example = {4, 10, 11, 9, 1, 1};
-//  QuickSort Elementary(example);
-//  // Assert
-//  ASSERT_ANY_THROW(Elementary.main(Elementary));
-//}
 
