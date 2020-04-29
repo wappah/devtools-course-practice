@@ -1,7 +1,7 @@
 // Copyright 2020 Golovanova Elena
 
-#include <gtest/gtest.h>
 #include "include/quick_sort.h"
+#include <gtest/gtest.h>
 #include <vector>
 
 TEST(Golovanova_Elena_QuickSortTest, Create_Empty_Class) {
