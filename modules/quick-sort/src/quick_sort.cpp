@@ -14,8 +14,6 @@ QuickSort::QuickSort(int _size) {
 }
 
 QuickSort::QuickSort(std::vector<int>_vector) {
-  if (_vector.size() < 0)
-       throw "Size is negative";
   matrix.resize(_vector.size(), 0);
   for (unsigned int i = 0; i < _vector.size(); i++)
     matrix[i] = _vector[i];
@@ -66,7 +64,4 @@ void QuickSort::main() {
   QSort(0, matrix.size() - 1);
   // for (unsigned long int i = 0; i < matrix.size(); i++)
   // std::cout << matrix[i];
-  for (unsigned int i = 0; i < matrix.size()-1; i++)
-    if (matrix[i] > matrix[i + 1])
-      throw "Vector is not sorted";
 }

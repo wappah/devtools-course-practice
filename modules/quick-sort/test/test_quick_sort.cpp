@@ -45,9 +45,12 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
 
 
 TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
-  // Arrange&Act
+  // Arrange
   std::vector<int> example = {6, 3, 1, 5};
   QuickSort Elementary(example);
+  std::vector<int> result = { 1, 3, 5, 6 };
+  // Act
+  Elementary.main();
   // Assert
-  ASSERT_NO_THROW(Elementary.main());
+  ASSERT_EQ(result, Elementary.GetVector());
 }
