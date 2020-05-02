@@ -40,7 +40,7 @@ int QuickSort::GetIndex(int _first, int _last) {
     if (first < last)
       std::swap(matrix[first], matrix[last]);
   }
-   return first;
+  return first;
 }
 
 void QuickSort::QSort(int _first, int _last) {
