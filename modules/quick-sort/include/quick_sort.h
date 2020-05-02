@@ -7,7 +7,7 @@
 #include <vector>
 
 class QuickSort {
-public:
+ protected:
   std::vector<int> matrix;
  public:
   QuickSort();

@@ -44,9 +44,8 @@ int QuickSort::GetIndex(int _first, int _last) {
 }
 
  void QuickSort::QSort(int _first, int _last) {
-  int middle = 0;
   if (_first < _last) {
-    middle = GetIndex(_first, _last);
+    int middle = GetIndex(_first, _last);
     QSort(_first, middle);
     QSort(middle + 1, _last);
   }
