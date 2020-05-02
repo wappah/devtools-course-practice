@@ -2,7 +2,7 @@
 
 #include "include/quick_sort.h"
 #include <random>
-#include <ctime>
+#include <algorithm>
 #include <vector>
 
 QuickSort::QuickSort() {}
@@ -40,10 +40,10 @@ int QuickSort::GetIndex(int _first, int _last) {
     if (first < last)
       std::swap(matrix[first], matrix[last]);
   }
-   return first; 
+   return first;
 }
 
- void QuickSort::QSort(int _first, int _last) {
+void QuickSort::QSort(int _first, int _last) {
   if (_first < _last) {
     int middle = GetIndex(_first, _last);
     QSort(_first, middle);
@@ -55,7 +55,7 @@ void QuickSort::main() {
   if (matrix.empty())
     throw "Matrix is empty";
   bool flag = true;
-  //int end_index = Elementary.matrix.size() - 1;
+  // int end_index = Elementary.matrix.size() - 1;
   for (unsigned int i = 0; i < matrix.size() - 1; i++)
     if (matrix[i] > matrix[i + 1]) {
       flag = false;
@@ -64,9 +64,9 @@ void QuickSort::main() {
   if (flag == true)
     throw "Vector is sorted";
   QSort(0, matrix.size() - 1);
- // for (unsigned long int i = 0; i < matrix.size(); i++)
-   // std::cout << matrix[i];
-  for (unsigned long int i = 0; i < matrix.size()-1; i++)
+  // for (unsigned long int i = 0; i < matrix.size(); i++)
+  // std::cout << matrix[i];
+  for (unsigned int i = 0; i < matrix.size()-1; i++)
     if (matrix[i] > matrix[i + 1])
-      throw "Vector is not sorted";  
+      throw "Vector is not sorted";
 }
