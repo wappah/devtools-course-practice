@@ -23,7 +23,7 @@ TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Empty) {
   // Arrange&Act
   QuickSort Elementary;
   // Assert
-  ASSERT_ANY_THROW(Elementary.main(&Elementary));
+  ASSERT_ANY_THROW(Elementary.main());
 }
 
 TEST(Golovanova_Elena_QuickSortTest, Assignment_Vector) {
@@ -35,19 +35,19 @@ TEST(Golovanova_Elena_QuickSortTest, Assignment_Vector) {
   ASSERT_EQ(example, Elementary.GetVector());
 }
 
-//TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
-//  // Arrange&Act
-//  std::vector<int> example = {4, 6, 6, 9, 10};
-//  QuickSort Elementary(example);
-//  // Assert
-//  ASSERT_ANY_THROW(Elementary.main(Elementary));
-//}
-//
-//TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
-//  // Arrange&Act
-//  std::vector<int> example = {1, 3, 2};
-//  QuickSort Elementary(example);
-//  // Assert
-//  ASSERT_NO_THROW(Elementary.main(Elementary));
-//}
+TEST(Golovanova_Elena_QuickSortTest, Vector_Is_Sorted) {
+  // Arrange&Act
+  std::vector<int> example = {4, 6, 6, 9, 10};
+  QuickSort Elementary(example);
+  // Assert
+  ASSERT_ANY_THROW(Elementary.main());
+}
 
+
+TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
+  // Arrange&Act
+  std::vector<int> example = {6, 3, 1, 5};
+  QuickSort Elementary(example);
+  // Assert
+  ASSERT_NO_THROW(Elementary.main());
+}
