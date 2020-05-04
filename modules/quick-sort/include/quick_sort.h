@@ -17,7 +17,6 @@ class QuickSort {
   int GetIndex(int _first, int _last);
   void  main();
   void QSort(int _first, int _last);
-  int m(int i);
 };
 
 #endif  // MODULES_QUICK_SORT_INCLUDE_QUICK_SORT_H_
