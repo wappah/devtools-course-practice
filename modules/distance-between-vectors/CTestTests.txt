@@ -78,7 +78,7 @@ set_tests_properties (${prefix}_can_Take_L4_Metrics PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Take_LInf_Metrics
-    COMMAND ${APPLICATION} 3.0 1.0 1.0 2.0 3.0 4.0 L4
+    COMMAND ${APPLICATION} 3.0 1.0 1.0 2.0 3.0 4.0 LInf
 )
 set_tests_properties (${prefix}_can_Take_LInf_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "LInf = 3"
