@@ -53,7 +53,6 @@ void QuickSort::main() {
   if (matrix.empty())
     throw "Matrix is empty";
   bool flag = true;
-  // int end_index = Elementary.matrix.size() - 1;
   for (unsigned int i = 0; i < matrix.size() - 1; i++)
     if (matrix[i] > matrix[i + 1]) {
       flag = false;
@@ -62,6 +61,4 @@ void QuickSort::main() {
   if (flag == true)
     throw "Vector is sorted";
   QSort(0, matrix.size() - 1);
-  // for (unsigned long int i = 0; i < matrix.size(); i++)
-  // std::cout << matrix[i];
 }
