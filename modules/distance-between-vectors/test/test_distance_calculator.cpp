@@ -16,8 +16,6 @@ using std::string;
 
 class DistanceCalculatorTest : public ::testing::Test {
  protected:
-    // virtual void SetUp() {}
-
     void Act(vector<string> args_) {
         vector<const char*> options;
 
@@ -32,7 +30,7 @@ class DistanceCalculatorTest : public ::testing::Test {
         output_ = app_(argc, argv);
     }
 
-    void Assert(std::string expected) {
+    void Assert(string expected) {
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 

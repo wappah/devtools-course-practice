@@ -48,7 +48,7 @@ add_test(
     NAME ${prefix}_can_Take_L1_Metrics
     COMMAND ${APPLICATION} 1.0 2.0 3.0 2.0 3.0 4.0 L1
 )
-set_tests_properties (${prefix}_can_Add_Complexs PROPERTIES
+set_tests_properties (${prefix}_can_Take_L1_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "L1 = 3"
     LABELS "${MODULE}")
 
@@ -56,7 +56,7 @@ add_test(
     NAME ${prefix}_can_Take_L2_Metrics
     COMMAND ${APPLICATION} 1.0 2.0 3.0 2.0 3.0 4.0 L2
 )
-set_tests_properties (${prefix}_can_Diff_Complexs PROPERTIES
+set_tests_properties (${prefix}_can_Take_L2_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "L2 = 1.73205"
     LABELS "${MODULE}")
 
@@ -64,7 +64,7 @@ add_test(
     NAME ${prefix}_can_Take_L3_Metrics
     COMMAND ${APPLICATION} 3.0 1.0 1.0 2.0 3.0 4.0 L3
 )
-set_tests_properties (${prefix}_can_Mult_Complexs PROPERTIES
+set_tests_properties (${prefix}_can_Take_L3_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "L3 = 3.30193"
     LABELS "${MODULE}")
 
@@ -72,7 +72,7 @@ add_test(
     NAME ${prefix}_can_Take_L4_Metrics
     COMMAND ${APPLICATION} 3.0 1.0 1.0 2.0 3.0 4.0 L4
 )
-set_tests_properties (${prefix}_can_Divide_Complexs PROPERTIES
+set_tests_properties (${prefix}_can_Take_L4_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "L4 = 3.14635"
     LABELS "${MODULE}")
 
@@ -80,8 +80,6 @@ add_test(
     NAME ${prefix}_can_Take_LInf_Metrics
     COMMAND ${APPLICATION} 3.0 1.0 1.0 2.0 3.0 4.0 L4
 )
-set_tests_properties (${prefix}_can_Divide_Complexs PROPERTIES
+set_tests_properties (${prefix}_can_Take_LInf_Metrics PROPERTIES
     PASS_REGULAR_EXPRESSION "LInf = 3"
     LABELS "${MODULE}")
-
-
