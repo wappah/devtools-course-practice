@@ -97,6 +97,22 @@ TEST_F(DistanceBetweenVectorsTest, can_set_second_vec) {
   EXPECT_EQ(newSecond, metrics.getSecond());
 }
 
+TEST_F(DistanceBetweenVectorsTest, can_set_both_vec) {
+    // Arrange
+    std::vector<float> first{ 1.0, 2.0, 3.0 };
+    std::vector<float> second{ 2.0, 3.0, 4.0 };
+    std::vector<float> newFirst{ 3.0, 2.0, 1.0 };
+    std::vector<float> newSecond{ 4.0, 3.0, 2.0 };
+    Metrics metrics(first, second);
+
+    // Act
+    metrics.setBoth(newFirst, newSecond);
+
+    // Assert
+    EXPECT_EQ(newFirst, metrics.getFirst());
+    EXPECT_EQ(newSecond, metrics.getSecond());
+}
+
 TEST_F(DistanceBetweenVectorsTest, cannot_set_fst_vec_of_another_div) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
@@ -117,6 +133,18 @@ TEST_F(DistanceBetweenVectorsTest, cannot_set_sec_vec_of_another_div) {
 
   // Act & Assert
   ASSERT_ANY_THROW(metrics.setSecond(newSecond));
+}
+
+TEST_F(DistanceBetweenVectorsTest, cannot_set_both_vec) {
+    // Arrange
+    std::vector<float> first{ 1.0, 2.0, 3.0 };
+    std::vector<float> second{ 2.0, 3.0, 4.0 };
+    std::vector<float> newFirst{ 3.0, 2.0, 1.0 };
+    std::vector<float> newSecond{ 3.0, 2.0 };
+    Metrics metrics(first, second);
+
+    // Act & Assert
+    ASSERT_ANY_THROW(metrics.setBoth(newFirst, newSecond));
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l1_metric_1) {
