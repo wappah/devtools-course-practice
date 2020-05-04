@@ -14,7 +14,6 @@ class QuickSort {
   explicit QuickSort(int _size);
   explicit QuickSort(std::vector<int>_vector);
   std::vector<int> GetVector();
-  // int GetIndex(const std::vector<int>& _matrix, int _first, int _last);
   int GetIndex(int _first, int _last);
   void  main();
   void QSort(int _first, int _last);
