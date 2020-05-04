@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <vector>
 #include <string>
 #include <sstream>
 
@@ -25,7 +26,8 @@ void DistanceCalculator::help(const char* appname, const char* message) {
           "and <metrics> is one of 'L1', 'L2', 'L3', 'L4', 'LInf'.\n";
 }
 
-bool DistanceCalculator::validateNumberOfArguments(int argc, const char** argv) {
+bool DistanceCalculator::validateNumberOfArguments(int          argc,
+                                                   const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
