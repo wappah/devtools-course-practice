@@ -21,7 +21,7 @@ class DistanceCalculator {
         double x2;
         double y2;
         double z2;
-		char operation;
+        char operation;
     } Arguments;
 };
 
