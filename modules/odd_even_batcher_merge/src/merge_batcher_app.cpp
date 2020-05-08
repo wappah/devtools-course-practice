@@ -1,8 +1,5 @@
 // Copyright 2020 Zinkov Artem
 
-#include "include/odd_even_batcher_merge.h"
-#include "include/merge_batcher_app.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -10,6 +7,10 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
+#include <vector>
+
+#include "include/odd_even_batcher_merge.h"
+#include "include/merge_batcher_app.h"
 
 Merge_Batcher_App::Merge_Batcher_App() : message_("") {}
 
@@ -26,10 +27,11 @@ bool Merge_Batcher_App::validateNumberOfArguments(int argc, const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
-    }
-    else if (argc != 3) {
-        help(argv[0], "ERROR: Should be 2 arguments.\n\n");
-        return false;
+    } else {
+        if (argc != 3) {
+            help(argv[0], "ERROR: Should be 2 arguments.\n\n");
+            return false;
+        }
     }
     return true;
 }
@@ -39,9 +41,10 @@ std::vector<int> parseVector(const char* arg) {
     std::string str = arg;
     std::istringstream in(str);
 
-    for (auto& s : str)
+    for (auto& s : str) {
         if (!(isdigit(s) || s == ',' || s == '.' || s == ' ' || s == '-'))
             throw std::string("ERROR: Wrong format!");
+    }
 
     for (int n; in >> n; vec.push_back(n), in.get());
     std::sort(vec.begin(), vec.end());
