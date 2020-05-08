@@ -1,22 +1,20 @@
 // Copyright 2020 Zinkov Artem
 
 #include "include/odd_even_batcher_merge.h"
-#include <stdexcept>
-#include <iostream>
 #include <algorithm>
 #include <vector>
 
-std::vector<int> merge_batcher(std::vector<int> vec1,
-    std::vector<int> vec2) {
-    vec1 = shuffle(vec1);
-    vec2 = shuffle(vec2);
-    std::size_t size_odd1 = vec1.size() / 2 + vec1.size() % 2;
-    std::size_t size_odd2 = vec2.size() / 2 + vec2.size() % 2;
+std::vector<int> merge_batcher(const std::vector<int> vec1,
+   const std::vector<int> vec2) {
+    std::vector<int> v1 = shuffle(vec1);
+    std::vector<int> v2 = shuffle(vec2);
+    std::size_t size_odd1 = v1.size() / 2 + v1.size() % 2;
+    std::size_t size_odd2 = v2.size() / 2 + v2.size() % 2;
 
-    std::vector<int> odd1(vec1.begin(), vec1.begin() + size_odd1);
-    std::vector<int> odd2(vec2.begin(), vec2.begin() + size_odd2);
-    std::vector<int> even1(vec1.begin() + size_odd1, vec1.end());
-    std::vector<int> even2(vec2.begin() + size_odd2, vec2.end());
+    std::vector<int> odd1(v1.begin(), v1.begin() + size_odd1);
+    std::vector<int> odd2(v2.begin(), v2.begin() + size_odd2);
+    std::vector<int> even1(v1.begin() + size_odd1, v1.end());
+    std::vector<int> even2(v2.begin() + size_odd2, v2.end());
 
     std::vector<int> merge_odd(merge_odd_even(odd1, odd2));
     std::vector<int> merge_even(merge_odd_even(even1, even2));
