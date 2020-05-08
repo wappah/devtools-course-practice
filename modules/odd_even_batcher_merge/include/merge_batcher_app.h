@@ -7,11 +7,11 @@
 #include <vector>
 
 class Merge_Batcher_App {
-  public:
+    public:
     Merge_Batcher_App();
     std::string operator()(int argc, const char** argv);
 
-  private:
+    private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
@@ -21,4 +21,4 @@ class Merge_Batcher_App {
     } Arguments;
 };
 
-#endif  //MODULES_ODD_EVEN_BATCHER_MERGE_INCLUDE_MERGE_BATCHER_APP_H_
+#endif  // MODULES_ODD_EVEN_BATCHER_MERGE_INCLUDE_MERGE_BATCHER_APP_H_
