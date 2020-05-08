@@ -1,16 +1,17 @@
 // Copyright 2020 Zinkov Artem
 
-#ifndef MODULES_ODD_EVEN_BATCHER_INCLUDE_MERGE_ODD_EVEN_BATCHER_MERGE_H_
-#define MODULES_ODD_EVEN_BATCHER_INCLUDE_MERGE_ODD_EVEN_BATCHER_MERGE_H_
+#ifndef MODULES_ODD_EVEN_BATCHER_MERGE_INCLUDE_MERGE_BATCHER_APP_H_
+#define MODULES_ODD_EVEN_BATCHER_MERGE_INCLUDE_MERGE_BATCHER_APP_H_
 
 #include <string>
+#include <vector>
 
 class Merge_Batcher_App {
-public:
+  public:
     Merge_Batcher_App();
     std::string operator()(int argc, const char** argv);
 
-private:
+  private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
@@ -20,4 +21,4 @@ private:
     } Arguments;
 };
 
-#endif  // MODULES_ODD_EVEN_BATCHER_INCLUDE_MERGE_ODD_EVEN_BATCHER_MERGE_H_
+#endif  //MODULES_ODD_EVEN_BATCHER_MERGE_INCLUDE_MERGE_BATCHER_APP_H_

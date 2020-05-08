@@ -53,7 +53,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_With_Negative_Elements) {
 
     // Act
     std::vector<int> vec3 = merge_batcher(vec1, vec2);
-    
+
     // Assert
     ASSERT_EQ(res, vec3);
 }
@@ -189,7 +189,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Odd_Even_Length) {
     std::sort(vec3.begin(), vec3.end());
 
     // Act
-    std::vector<int> res = merge_batcher(vec1, vec2); 
+    std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
     ASSERT_EQ(res, vec3);
