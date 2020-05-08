@@ -46,7 +46,7 @@ std::vector<int> parseVector(const char* arg) {
             throw std::string("ERROR: Wrong format!");
     }
 
-    for (int n; in >> n; vec.push_back(n), in.get()) {};
+    for (int n; in >> n; vec.push_back(n), in.get()) {}
     std::sort(vec.begin(), vec.end());
 
     return vec;
