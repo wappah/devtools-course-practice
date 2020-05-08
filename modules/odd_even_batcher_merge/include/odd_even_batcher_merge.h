@@ -5,8 +5,8 @@
 
 #include <vector>
 
-std::vector<int> merge_batcher(const std::vector<int> vec1,
-    const std::vector<int> vec2);
+std::vector<int> merge_batcher(const std::vector<int>& vec1,
+    const std::vector<int>& vec2);
 std::vector<int> shuffle(const std::vector<int>& vec);
 std::vector<int> merge_odd_even(const std::vector<int>& vec1,
     const std::vector<int>& vec2);

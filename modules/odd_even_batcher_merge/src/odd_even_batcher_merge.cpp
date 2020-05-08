@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <vector>
 
-std::vector<int> merge_batcher(const std::vector<int> vec1,
-   const std::vector<int> vec2) {
+std::vector<int> merge_batcher(const std::vector<int>& vec1,
+   const std::vector<int>& vec2) {
     std::vector<int> v1 = shuffle(vec1);
     std::vector<int> v2 = shuffle(vec2);
     std::size_t size_odd1 = v1.size() / 2 + v1.size() % 2;
