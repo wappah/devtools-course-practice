@@ -110,12 +110,12 @@ TEST(HashMapTest, chain_delete_node_from_hashmap) {
     ASSERT_EQ(1, map.size());
 }
 
-TEST(HashMapTest, delete_node_from_hashmap_check_for_ne) {
+TEST(HashMapTest, delete_node_from_hashmap_check_throw) {
     hashmap<const char*, int> map(4);
     map.insert("Nick", 15);
     map.insert("Ilya", 20);
 
     map.remove("Nick");
 
-    ASSERT_NE(15, map["Nick"]);
+    ASSERT_ANY_THROW(map["Nick"]);
 }
