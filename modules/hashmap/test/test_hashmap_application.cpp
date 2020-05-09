@@ -74,7 +74,8 @@ TEST_F(HashmapAppTest, Cant_Insert_Wrong_Key) {
 }
 
 TEST_F(HashmapAppTest, Can_Remove_Element) {
-    std::vector<std::string> args = {"insert", "1", "2", "remove", "1", "get", "1"};
+    std::vector<std::string> args = {"insert", "1", "2", "remove",
+        "1", "get", "1"};
 
     Act(args);
 
