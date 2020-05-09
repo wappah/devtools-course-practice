@@ -1,7 +1,6 @@
 // Copyright 2020 Petrov Anton
 
 #include "include/MortgageCalc.h"
-#include <cmath>
 #include <iostream>
 
 MortgageCalc::MortgageCalc(int _cost, int _downPayment,
@@ -9,31 +8,31 @@ MortgageCalc::MortgageCalc(int _cost, int _downPayment,
     downPayment(_downPayment), creditTerm(_creditTerm),
     interestRate(_interestRate) {}
 
-int MortgageCalc::getCost()const {
+int MortgageCalc::getCost() const {
     return cost;
 }
 
-int MortgageCalc::getDownPayment()const {
+int MortgageCalc::getDownPayment() const {
     return downPayment;
 }
 
-int MortgageCalc::getCreditTerm()const {
+int MortgageCalc::getCreditTerm() const {
     return creditTerm;
 }
 
-double MortgageCalc::getInterestRate()const {
+double MortgageCalc::getInterestRate() const {
     return interestRate;
 }
 
-int MortgageCalc::getTotalFee()const {
+int MortgageCalc::getTotalFee() const {
     return totalFee;
 }
 
-double MortgageCalc::getMonthlyRate()const {
+double MortgageCalc::getMonthlyRate() const {
     return monthlyRate;
 }
 
-int MortgageCalc::getMonthlyPayment()const {
+int MortgageCalc::getMonthlyPayment() const {
     return monthlyPayment;
 }
 
@@ -57,8 +56,7 @@ void MortgageCalc::calc() {
     cost -= downPayment;
     creditTerm *= 12;
     monthlyRate = ((interestRate) / 100) / 12;
-    double tmp;
-    tmp = pow((1 + monthlyRate), creditTerm);
+    double tmp = pow((1 + monthlyRate), creditTerm);
     monthlyPayment = cost * monthlyRate * (tmp / (tmp - 1));
     totalFee = monthlyPayment * creditTerm;
 }

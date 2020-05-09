@@ -11,7 +11,7 @@ TEST(CalculatorTest, Can_Set_Cost) {
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setCost(num);
     // Assert
-    EXPECT_EQ(mortgage.getCost(), num);
+    EXPECT_EQ(num, mortgage.getCost());
 }
 
 TEST(CalculatorTest, Can_Set_DownPayment) {
@@ -21,7 +21,7 @@ TEST(CalculatorTest, Can_Set_DownPayment) {
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setDownPayment(num);
     // Assert
-    EXPECT_EQ(mortgage.getDownPayment(), num);
+    EXPECT_EQ(num, mortgage.getDownPayment());
 }
 
 TEST(CalculatorTest, Can_Set_CreditTerm) {
@@ -31,7 +31,7 @@ TEST(CalculatorTest, Can_Set_CreditTerm) {
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setCreditTerm(num);
     // Assert
-    EXPECT_EQ(mortgage.getCreditTerm(), num);
+    EXPECT_EQ(num, mortgage.getCreditTerm());
 }
 
 TEST(CalculatorTest, Can_Set_InterestRate) {
@@ -41,7 +41,7 @@ TEST(CalculatorTest, Can_Set_InterestRate) {
     MortgageCalc mortgage(0, 0, 0, 0);
     mortgage.setInterestRate(num);
     // Assert
-    EXPECT_EQ(mortgage.getInterestRate(), num);
+    EXPECT_EQ(num, mortgage.getInterestRate());
 }
 
 TEST(CalculatorTest, Can_Get_TotalFee) {
@@ -51,7 +51,7 @@ TEST(CalculatorTest, Can_Get_TotalFee) {
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
     // Assert
-    EXPECT_EQ(mortgage.getTotalFee(), num);
+    EXPECT_EQ(num, mortgage.getTotalFee());
 }
 
 TEST(CalculatorTest, Can_Get_MonthlyPayment) {
@@ -61,7 +61,7 @@ TEST(CalculatorTest, Can_Get_MonthlyPayment) {
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
     // Assert
-    EXPECT_EQ(mortgage.getMonthlyPayment(), num);
+    EXPECT_EQ(num, mortgage.getMonthlyPayment());
 }
 
 TEST(CalculatorTest, Can_Get_MonthlyRate) {
@@ -71,32 +71,29 @@ TEST(CalculatorTest, Can_Get_MonthlyRate) {
     MortgageCalc mortgage(2000000, 0, 10, 15);
     mortgage.calc();
     // Assert
-    EXPECT_DOUBLE_EQ(mortgage.getMonthlyRate(), num);
+    EXPECT_DOUBLE_EQ(num, mortgage.getMonthlyRate());
 }
 
 TEST(CalculatorTest, Can_Calculation_With_Zero_Numbers) {
-    // Arrange
-    // Act
+    // Arrange & Act
     MortgageCalc mortgage(0, 0, 0, 0);
     // Assert
     ASSERT_TRUE(mortgage.getTotalFee());
 }
 
 TEST(CalculatorTest, Is_Copy_Constructort_Working_Fine) {
-    // Arrange
-    // Act
+    // Arrange & Act
     MortgageCalc mortgage(1, 1, 1, 1);
     MortgageCalc mortgage2(mortgage);
     // Assert
-    EXPECT_EQ(mortgage2.getCost(), mortgage.getCost());
-    EXPECT_EQ(mortgage2.getDownPayment(), mortgage.getDownPayment());
-    EXPECT_EQ(mortgage2.getCreditTerm(), mortgage.getCreditTerm());
-    EXPECT_DOUBLE_EQ(mortgage2.getInterestRate(), mortgage.getInterestRate());
+    EXPECT_EQ(mortgage.getCost(), mortgage2.getCost());
+    EXPECT_EQ(mortgage.getDownPayment(), mortgage2.getDownPayment());
+    EXPECT_EQ(mortgage.getCreditTerm(), mortgage2.getCreditTerm());
+    EXPECT_DOUBLE_EQ(mortgage.getInterestRate(), mortgage2.getInterestRate());
 }
 
 TEST(CalculatorTest, Create_Copy_Constructor) {
-    // Arrange
-    // Act
+    // Arrange & Act
     MortgageCalc mortgage(1, 1, 1, 1);
     MortgageCalc mortgage2(mortgage);
     // Assert
