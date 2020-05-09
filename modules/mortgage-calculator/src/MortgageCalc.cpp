@@ -1,7 +1,7 @@
 // Copyright 2020 Petrov Anton
 
 #include "include/MortgageCalc.h"
-#include <iostream>
+#include <cmath>
 
 MortgageCalc::MortgageCalc(int _cost, int _downPayment,
     int _creditTerm, double _interestRate) :cost(_cost),
