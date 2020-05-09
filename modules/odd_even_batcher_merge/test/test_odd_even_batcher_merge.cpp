@@ -23,52 +23,52 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Ordered_Vector) {
     // Arrange
     std::vector<int> vec1{ 1, 2, 3, 4, 5, 6, 7, 8 };
     std::vector<int> vec2{ 9, 10, 11 };
-    std::vector<int> res{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+    std::vector<int> vec3{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
 
     // Act
-    std::vector<int> vec3 = merge_batcher(vec1, vec2);
+    std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ (vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_One_Size_Element) {
     // Arrange
     std::vector<int> vec1{ 1 };
     std::vector<int> vec2{ 2 };
-    std::vector<int> res{ 1, 2};
+    std::vector<int> vec3{ 1, 2};
 
     // Act
-    std::vector<int> vec3 = merge_batcher(vec1, vec2);
+    std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_With_Negative_Elements) {
     // Arrange
     std::vector<int> vec1{ -17, -3, 5, 2 };
     std::vector<int> vec2{ -11, 3, 5, 23, 51 };
-    std::vector<int> res{ -17, -11, -3, 2, 5, 3, 5, 23, 51 };
+    std::vector<int> vec3{ -17, -11, -3, 2, 5, 3, 5, 23, 51 };
 
     // Act
-    std::vector<int> vec3 = merge_batcher(vec1, vec2);
+    std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_With_Repeating_Elements) {
     // Arrange
     std::vector<int> vec1{ 1, 1, 1, 1 };
     std::vector<int> vec2{ 2, 2, 2, 2, 2 };
-    std::vector<int> res{ 1, 1, 1, 1, 2, 2, 2, 2, 2 };
+    std::vector<int> vec3{ 1, 1, 1, 1, 2, 2, 2, 2, 2 };
 
     // Act
-    std::vector<int> vec3 = merge_batcher(vec1, vec2);
+    std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 
@@ -99,7 +99,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Same_Length) {
     std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Odd_Length) {
@@ -130,7 +130,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Odd_Length) {
     std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Even_Length) {
@@ -161,7 +161,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Even_Length) {
     std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Odd_Even_Length) {
@@ -192,7 +192,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_Odd_Even_Length) {
     std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Big_Vector) {
@@ -222,5 +222,5 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Big_Vector) {
     // Act
     std::vector<int> res = merge_batcher(vec1, vec2);
     // Assert
-    ASSERT_EQ(res, vec3);
+    ASSERT_EQ(vec3, res);
 }
