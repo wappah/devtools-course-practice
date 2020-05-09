@@ -21,7 +21,6 @@ TEST(HashMapTest, can_get_elems_max_size) {
     ASSERT_EQ(10, map.max_size());
 }
 
-
 TEST(HashMapTest, insertion_test) {
     hashmap<int, double> map(10);
 
@@ -90,6 +89,7 @@ TEST(HashMapTest, get_elem_from_hashmap_intkey) {
 
     ASSERT_EQ(10, map[15]);
 }
+
 TEST(HashMapTest, delete_node_from_hashmap) {
     hashmap<const char*, int> map(10);
     map.insert("Nick", 15);

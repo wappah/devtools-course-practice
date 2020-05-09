@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <string>
 #include <sstream>
+#include <cctype>
 #include "include/hashmap_application.h"
 
 std::string hashmapApp::operator()(int argc, const char** argv) {
