@@ -29,7 +29,7 @@ TEST(Even_Odd_Batcher_Merge_Test, Merge_Ordered_Vector) {
     std::vector<int> res = merge_batcher(vec1, vec2);
 
     // Assert
-    ASSERT_EQ (vec3, res);
+    ASSERT_EQ(vec3, res);
 }
 
 TEST(Even_Odd_Batcher_Merge_Test, Merge_Vector_One_Size_Element) {
