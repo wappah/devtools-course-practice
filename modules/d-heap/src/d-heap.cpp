@@ -95,7 +95,7 @@ void d_heap::ascent(const size_t iter) {
     }
 }
 
-void d_heap::immersion(const size_t iter) {
+void d_heap::dive(const size_t iter) {
     size_t c = minChild(iter);
     size_t i = iter;
     while (c != 0 && keys[i] > keys[c]) {
@@ -134,7 +134,7 @@ void d_heap::del(const size_t iter) {
     if (iter != 0 && keys[iter] < keys[father(iter)])
         ascent(iter);
     else
-        immersion(iter);
+        dive(iter);
 }
 
 void d_heap::key_decrease(const size_t iter, const size_t down_key) {

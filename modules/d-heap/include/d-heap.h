@@ -29,7 +29,7 @@ class d_heap {
     size_t lastChild(const size_t iter);
     size_t father(const size_t iter);
     void ascent(const size_t iter);
-    void immersion(const size_t iter);
+    void dive(const size_t iter);
     void insert(const size_t key);
     void del(const size_t iter);
     void key_decrease(const size_t iter, const size_t down_key);

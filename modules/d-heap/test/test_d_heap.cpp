@@ -377,7 +377,7 @@ TEST(Dheap, can_immersion_element_without_throws) {
     a.insert(4);
 
     // Act Assert
-    ASSERT_NO_THROW(a.immersion(0));
+    ASSERT_NO_THROW(a.dive(0));
 }
 
 TEST(Dheap, can_immersion_element_1) {
@@ -388,7 +388,7 @@ TEST(Dheap, can_immersion_element_1) {
     a.insert(5); a.insert(1);
     a.insert(3); a.insert(2);
     a.insert(4);
-    a.immersion(0);
+    a.dive(0);
 
     // Assert
     EXPECT_EQ(1, a[0]);
@@ -403,7 +403,7 @@ TEST(Dheap, can_immersion_element_2) {
     a.insert(2); a.insert(4);
     a.insert(3); a.insert(5);
     a.insert(5); a.insert(1);
-    a.immersion(1);
+    a.dive(1);
 
     // Assert
     EXPECT_EQ(4, a[5]);
