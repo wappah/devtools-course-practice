@@ -70,7 +70,6 @@ int hashmapApp::parseOperation(const char** ops) {
     }
     if (std::strcmp(ops[0], "get") == 0) {
         auto key = parseToValue(ops[1]);
-        std::exception get_exc;
         try {
             auto value = _hashmap[key];
             _sstream << "(value = " << value << " with key = " << key << ") ";
