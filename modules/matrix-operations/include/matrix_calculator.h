@@ -1,6 +1,6 @@
 // Copyright 2020 Golubev Vlad
-#ifndef MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_OPERATIONS_APP_H_
-#define MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_OPERATIONS_APP_H_
+#ifndef MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_CALCULATOR_H_
+#define MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_CALCULATOR_H_
 
 #include <string>
 
@@ -14,7 +14,7 @@ class MatrixCalculator {
    bool validateNumberOfArguments(int argc, const char** argv);
    std::string message_;
    typedef struct {
-
+     double _zero;
    };
 };
 
