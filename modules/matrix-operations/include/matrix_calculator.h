@@ -15,7 +15,7 @@ class MatrixCalculator {
    std::string message_;
    typedef struct {
      double _zero;
-   };
+   } Arguments;
 };
 
 #endif  // MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_OPERATIONS_APP_H_
