@@ -14,17 +14,17 @@ bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
 }
 
 int d_heap_sort::ParseOp(const char** Op) {
-  if (strcmp(Op[0], "add") == 0) {
+  if (std::strcmp(Op[0], "add") == 0) {
     int value = ParseArg(Op + 1);
     heap.insert(value);
     return 1;
   }
-  if (strcmp(Op[0], "del") == 0) {
+  if (std::strcmp(Op[0], "del") == 0) {
     int value = ParseArg(Op + 1);
     heap.del(heap.getInd(value));
     return 1;
   }
-  if (strcmp(Op[0], "sort") == 0) {
+  if (std::strcmp(Op[0], "sort") == 0) {
     d_heap copy(heap);
     while (copy.getCount() != 0) {
       ret_str += std::to_string(copy[0]) += " ";
@@ -34,7 +34,7 @@ int d_heap_sort::ParseOp(const char** Op) {
     return 0;
   }
 
-  if (strcmp(Op[0], "show") == 0) {
+  if (std::strcmp(Op[0], "show") == 0) {
     for (int i = 0; i < heap.getCount(); ++i)
       ret_str += std::to_string(heap[i]) += " ";
     ret_str += "\n";

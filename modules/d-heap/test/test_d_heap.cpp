@@ -2,6 +2,7 @@
 
 #include <gtest/gtest.h>
 #include <algorithm>
+#include <limits>
 #include "include/d-heap.h"
 
 TEST(Dheap, can_create_default_d_heap) {

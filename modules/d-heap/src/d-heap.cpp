@@ -1,6 +1,7 @@
 // Copyright 2020 Antipin Alexander & Guschin Alexandr
 
 #include <algorithm>
+#include <limits>
 #include "include/d-heap.h"
 
 d_heap::d_heap()
