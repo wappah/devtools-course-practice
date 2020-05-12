@@ -20,10 +20,9 @@ TEST(Dheap, is_creating_default_d_heap_correct) {
 TEST(Dheap, is_creating_default_d_heap_return_correct_values) {
     // Arrange
     d_heap a;
-    size_t i = -1;
 
     // Assert
-    EXPECT_EQ(i, a[0]);
+    EXPECT_EQ(ULLONG_MAX, a[0]);
 }
 
 TEST(Dheap, can_create_d_heap_with_two_parameters) {

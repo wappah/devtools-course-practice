@@ -3,9 +3,7 @@
 #include "include/d-heap-sort.h"
 #include <algorithm>
 
-d_heap_sort::d_heap_sort() {
-  ret_str = "";
-}
+d_heap_sort::d_heap_sort() { ret_str = ""; }
 
 bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
   if (argc < 2) {
@@ -26,7 +24,13 @@ int d_heap_sort::ParseOp(const char** Op) {
     heap.del(heap.getInd(value));
     return 1;
   }
-  if (strcmp(Op[0], "sort") == 0){
+  if (strcmp(Op[0], "sort") == 0) {
+    d_heap copy(heap);
+    while (copy.getCount() != 0) {
+      ret_str += std::to_string(copy[0]) += " ";
+      copy.del(0);
+    }
+    ret_str += "\n";
     return 0;
   }
 
@@ -40,9 +44,7 @@ int d_heap_sort::ParseOp(const char** Op) {
   throw std::invalid_argument("Bad arguments!");
 }
 
-int d_heap_sort::ParseArg(const char** Arg) {
-  return std::atoi(Arg[0]);
-}
+int d_heap_sort::ParseArg(const char** Arg) { return std::atoi(Arg[0]); }
 
 std::string d_heap_sort::operator()(int argc, const char** argv) {
   if (validateNumberOfArguments(argc, argv) == 0) return ret_str;
@@ -52,7 +54,6 @@ std::string d_heap_sort::operator()(int argc, const char** argv) {
     i += shift;
   }
 
-  
   return ret_str;
 }
 

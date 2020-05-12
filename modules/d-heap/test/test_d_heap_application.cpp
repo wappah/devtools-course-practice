@@ -62,3 +62,11 @@ TEST_F(DHeapSortTest, Can_Add_And_Delete_Element) {
 
   Assert("23");
 }
+
+TEST_F(DHeapSortTest, Can_Sort) {
+  vector<string> args = {"add", "1", "add", "23", "add", "12", "sort"};
+
+  Act(args);
+
+  Assert("1 12 23");
+}
