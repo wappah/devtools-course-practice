@@ -10,9 +10,3 @@ add_test(
 )
 set_tests_properties (${prefix}_can_Run PROPERTIES
     LABELS "${MODULE}")
-
-add_test(
-    NAME ${prefix}_can_Print_Help_Without_Arguments
-    COMMAND ${APPLICATION}
-)
-

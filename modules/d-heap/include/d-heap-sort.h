@@ -1,7 +1,7 @@
 // Copyright 2020 Guschin Alexandr
 
-#ifndef MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_
-#define MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_
+#ifndef MODULES_D_HEAP_INCLUDE_D_HEAP_SORT_H_
+#define MODULES_D_HEAP_INCLUDE_D_HEAP_SORT_H_
 
 #include <stdint.h>
 #include <algorithm>
@@ -23,4 +23,4 @@ class d_heap_sort {
   std::string operator()(int argc, const char** argv);
 };
 
-#endif  // MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_
+#endif  // MODULES_D_HEAP_INCLUDE_D_HEAP_SORT_H_
