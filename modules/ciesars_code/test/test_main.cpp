@@ -1,4 +1,4 @@
-// Copyright 2020 Antipin Alexander
+// Copyright 2020 Mazur Daniil
 
 #include <gtest/gtest.h>
 
