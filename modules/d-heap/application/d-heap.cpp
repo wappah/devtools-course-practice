@@ -1,4 +1,4 @@
-// Copyright 2017 Korniakov Kirill
+// Copyright 2020 Guschin Alexandr
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,9 +8,9 @@
 #include "include/d-heap-sort.h"
 
 int main(int argc, const char** argv) {
-	std::cout << "Hi" << std::endl;
-    // d_heap_sort app;
-    // std::string output = app(argc, argv);
-    // printf("%s\n", output.c_str());
-    return 0;
+  d_heap_sort app;
+    
+  std::cout << app(argc, argv) << std::endl;
+
+  return 0;
 }

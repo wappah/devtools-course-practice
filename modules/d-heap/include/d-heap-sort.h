@@ -1,4 +1,4 @@
-// Copyright 2020 Antipin Alexander
+// Copyright 2020 Guschin Alexandr
 
 #ifndef MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_
 #define MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_
@@ -13,11 +13,14 @@
 class d_heap_sort {
  private:
   d_heap heap;
-
+  std::string ret_str;
+  bool validateNumberOfArguments(int argc, const char** argv);
+  int ParseOp(const char** Op);
+  int ParseArg(const char** Arg);
+  std::string Help();
  public:
   d_heap_sort();
   std::string operator()(int argc, const char** argv);
- 
 };
 
 #endif  // MODULES_D_HEAP_SORT_INCLUDE_D_HEAP_H_

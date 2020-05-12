@@ -1,4 +1,4 @@
-// Copyright 2020 Antipin Alexander
+// Copyright 2020 Antipin Alexander & Guschin Alexandr
 
 #ifndef MODULES_D_HEAP_INCLUDE_D_HEAP_H_
 #define MODULES_D_HEAP_INCLUDE_D_HEAP_H_
@@ -28,6 +28,7 @@ class d_heap {
     size_t firstChild(const size_t iter);
     size_t lastChild(const size_t iter);
     size_t father(const size_t iter);
+    size_t getInd(const size_t key);
     void ascent(const size_t iter);
     void dive(const size_t iter);
     void insert(const size_t key);

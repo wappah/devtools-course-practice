@@ -1,4 +1,4 @@
-// Copyright 2020 Antipin Alexander
+// Copyright 2020 Antipin Alexander & Guschin Alexandr
 
 #include <algorithm>
 #include "include/d-heap.h"
@@ -83,6 +83,13 @@ size_t d_heap::father(const size_t iter) {
         return i - 1;
     else
         return i;
+}
+
+size_t d_heap::getInd(const size_t key) {
+  for (size_t i = 0; i < count; ++i) {
+    if (keys[i] == key) return i;
+  }
+  return ULLONG_MAX;
 }
 
 void d_heap::ascent(const size_t iter) {

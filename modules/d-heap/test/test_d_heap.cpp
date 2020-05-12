@@ -1,4 +1,4 @@
-// Copyright 2020 Antipin Alexander
+// Copyright 2020 Antipin Alexander & Guschin Alexandr
 
 #include <gtest/gtest.h>
 #include <algorithm>
@@ -53,6 +53,25 @@ TEST(Dheap, is_creating_d_heap_with_two_parameters_correct_3) {
 
     // Assert
     EXPECT_EQ(10, a.getSize());
+}
+
+TEST(Dheap, can_find_index_with_value) {
+  // Arrange
+  d_heap a;
+  a.insert(1);
+  a.insert(10);
+
+  // Act & Assert
+  EXPECT_EQ(1, a.getInd(10));
+}
+
+TEST(Dheap, can_return_ULLONG_MAX_when_cannot_find_index_with_value) {
+  // Arrange
+  d_heap a;
+  a.insert(1);
+
+  // Act & Assert
+  EXPECT_EQ(ULLONG_MAX, a.getInd(10));
 }
 
 TEST(Dheap, is_creating_d_heap_with_two_parameters_return_correct_values) {
