@@ -1,6 +1,8 @@
 // Copyright 2020 Guschin Alexandr
 
 #include <gtest/gtest.h>
+#include <string>
+#include <vector>
 #include "include/d-heap-sort.h"
 
 using ::testing::internal::RE;
