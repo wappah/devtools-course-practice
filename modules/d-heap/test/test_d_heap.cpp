@@ -22,7 +22,7 @@ TEST(Dheap, is_creating_default_d_heap_return_correct_values) {
     d_heap a;
 
     // Assert
-    EXPECT_EQ(ULLONG_MAX, a[0]);
+    EXPECT_EQ(-1, a[0]);
 }
 
 TEST(Dheap, can_create_d_heap_with_two_parameters) {
