@@ -3,7 +3,7 @@
 #include "include/d-heap-sort.h"
 #include <algorithm>
 #include <cstring>
-#include <exception>
+#include <string>
 
 d_heap_sort::d_heap_sort() { ret_str = ""; }
 
@@ -65,8 +65,6 @@ std::string d_heap_sort::operator()(int argc, const char** argv) {
   } catch (std::string& str) {
     return str;
   }
-  
-
   return ret_str;
 }
 
