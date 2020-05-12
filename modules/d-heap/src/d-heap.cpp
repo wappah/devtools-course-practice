@@ -1,7 +1,6 @@
 // Copyright 2020 Antipin Alexander & Guschin Alexandr
 
 #include <algorithm>
-#include <limits>
 #include "include/d-heap.h"
 
 d_heap::d_heap()
@@ -40,7 +39,7 @@ size_t d_heap::getCount() const { return count; }
 size_t d_heap::getSize() const { return size; }
 
 size_t d_heap::operator[](const size_t iter) {
-  if (count == 0) return ULLONG_MAX;
+  if (count == 0) return -1;
   return keys[iter]; }
 
 size_t d_heap::minChild(const size_t iter) {
