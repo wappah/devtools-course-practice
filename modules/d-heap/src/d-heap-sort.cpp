@@ -3,11 +3,12 @@
 #include "include/d-heap-sort.h"
 #include <algorithm>
 #include <cstring>
+#include <exception>
 
 d_heap_sort::d_heap_sort() { ret_str = ""; }
 
 bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
-  if (argc < 2) {
+  if (argc == 1) {
     ret_str = Help();
     return false;
   }
@@ -43,18 +44,28 @@ int d_heap_sort::ParseOp(const char** Op) {
     return 0;
   }
 
-  throw std::invalid_argument("Bad arguments!");
+  throw std::string("Bad arguments!");
 }
 
-int d_heap_sort::ParseArg(const char** Arg) { return std::atoi(Arg[0]); }
+int d_heap_sort::ParseArg(const char** Arg) {
+  int res = std::atoi(Arg[0]);
+  if (res < 0) throw std::string ("Negative number!");
+  if (res == 0) throw std::string("Invalid Argument");
+  return res;
+}
 
 std::string d_heap_sort::operator()(int argc, const char** argv) {
   if (validateNumberOfArguments(argc, argv) == 0) return ret_str;
 
-  for (int i = 1; i < argc; ++i) {
-    int shift = ParseOp(argv + i);
-    i += shift;
+  try {
+    for (int i = 1; i < argc; ++i) {
+      int shift = ParseOp(argv + i);
+      i += shift;
+    }
+  } catch (std::string& str) {
+    return str;
   }
+  
 
   return ret_str;
 }

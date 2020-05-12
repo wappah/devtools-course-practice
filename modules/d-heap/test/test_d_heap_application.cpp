@@ -63,3 +63,27 @@ TEST_F(DHeapSortTest, Can_Sort) {
 
   Assert("1 12 23");
 }
+
+TEST_F(DHeapSortTest, Can_Throw_When_Parse_Invalid_Operator) {
+  vector<string> args = {"just_work", "1"};
+
+  Act(args);
+
+  Assert("Bad arguments!");
+}
+
+TEST_F(DHeapSortTest, Can_Throw_When_Parse_Negative_Element) {
+  vector<string> args = {"add", "-1"};
+
+  Act(args);
+
+  Assert("Negative number!");
+}
+
+TEST_F(DHeapSortTest, Can_Throw_When_Parse_Invalid_Element) {
+  vector<string> args = {"add", "qwerty123"};
+
+  Act(args);
+
+  Assert("Invalid Argument");
+}
