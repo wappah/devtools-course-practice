@@ -17,7 +17,7 @@ class d_heap_sort {
   bool validateNumberOfArguments(int argc, const char** argv);
   int ParseOp(const char** Op);
   int ParseArg(const char** Arg);
-  std::string Help();
+  std::string Help(const char** AppName);
  public:
   d_heap_sort();
   std::string operator()(int argc, const char** argv);

@@ -9,7 +9,7 @@ d_heap_sort::d_heap_sort() { ret_str = ""; }
 
 bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
   if (argc == 1) {
-    ret_str = Help();
+    ret_str = Help(argv);
     return false;
   }
   return true;
@@ -68,4 +68,12 @@ std::string d_heap_sort::operator()(int argc, const char** argv) {
   return ret_str;
 }
 
-std::string d_heap_sort::Help() { return "TEST\n"; }
+std::string d_heap_sort::Help(const char** AppName) {
+  return std::string ("This is D-Heap sorting application\n") +
+         "Please provide arguments in following order\n" + "$ + " + AppName[0] +
+         " <Arguments>\n" + "Where Arguments: \n" +
+         "add <positive int> - add new element in heap\n" +
+         "del <positive int> - delete element using value\n" +
+         "show - showing elements in heap\n" +
+         "sort - sorting and showing elements in heap\n";
+}

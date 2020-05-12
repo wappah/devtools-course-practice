@@ -39,7 +39,7 @@ TEST_F(DHeapSortTest, Can_Help) {
 
   Act(args);
 
-  Assert("TEST");
+  Assert("This is D-Heap sorting application*");
 }
 
 TEST_F(DHeapSortTest, Can_Add_Element) {
