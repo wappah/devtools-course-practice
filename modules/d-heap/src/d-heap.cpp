@@ -8,6 +8,7 @@ d_heap::d_heap()
       size(1),
       count(0),
       keys(reinterpret_cast<size_t*>(operator new(sizeof(size_t) * 3))) {
+  new (keys) size_t(-1);
 }
 
 d_heap::d_heap(const uint8_t d, const size_t size)
