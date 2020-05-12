@@ -87,7 +87,7 @@ size_t d_heap::getInd(const size_t key) {
   for (size_t i = 0; i < count; ++i) {
     if (keys[i] == key) return i;
   }
-  return ULLONG_MAX;
+  return -1;
 }
 
 void d_heap::ascent(const size_t iter) {
