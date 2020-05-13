@@ -3,12 +3,10 @@
 #include "include/DepositCalc.h"
 #include "include/DepositCalc_app.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <string>
 #include <sstream>
+
+using std::stoi;
 
 DepositCalc_app::DepositCalc_app() : message_("") {}
 
@@ -51,13 +49,6 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
   return true;
 }
 
-int parseInt(const char* arg) {
-  int value;
-  value = std::stoi(arg);
-
-  return value;
-}
-
 std::string DepositCalc_app::operator()(int argc, const char** argv) {
   Arguments args;
 
@@ -65,12 +56,12 @@ std::string DepositCalc_app::operator()(int argc, const char** argv) {
     return message_;
   }
   try {
-    args.depositAmount = parseInt(argv[1]);
-    args.period = parseInt(argv[2]);
-    args.rate = parseInt(argv[3]);
+    args.depositAmount = stoi(argv[1]);
+    args.period = stoi(argv[2]);
+    args.rate = stoi(argv[3]);
   }
-  catch (std::string& str) {
-    return str;
+  catch (...) {
+    throw("Invalid arguments");
   }
 
   DepositCalc dc(args.depositAmount, args.period, args.rate);

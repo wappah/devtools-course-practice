@@ -4,11 +4,11 @@
 #define MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_H_
 extern const unsigned int max_period_days;
 class DepositCalc {
-    int depositAmount;  // summa vklada
+    int depositAmount;
     unsigned int period;
-    int rate;  // stavka
+    int rate;
     int depositWithRate;
-    int interestCharges;  // nachislenie procentov
+    int interestCharges;
  public:
      DepositCalc(int _depositAmount, int _period, int _rate);
      void calc();
