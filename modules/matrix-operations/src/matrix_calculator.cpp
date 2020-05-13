@@ -120,7 +120,6 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
   Matrix rhs(2, 2);
   Matrix resMatrix(2, 2);
   bool resBool;
-  double resDouble;
   double scalar = args.ñ;
   std::ostringstream stream;
 
@@ -151,16 +150,15 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
     stream << "A != B: " << resBool;
     break;
   case '7':
-    resDouble = lhs.determinant();
-    stream << "det(A) = " << resBool;
+    stream << "det(A) = " << lhs.determinant();
     break;
   case '8':
     resMatrix = lhs.transpose();
-    stream << "A.T = " << resBool;
+    stream << "A.T = ";
     break;
   case '9':
     resMatrix = lhs.takeInverseMatrix();
-    stream << "A^(-1)" << resBool;
+    stream << "A^(-1)";
     break;
   }
 
