@@ -19,9 +19,14 @@ void MatrixCalculator::help(const char* appname, const char* message) {
     "This is a matrix calculator application. \n\n" +
     "Please provide arguments in the following format:\n\n" +
 
+    "$ " + appname + " <a0_0> <a0_1> <a1_0> <a1_1> " +
+    "<b0_0> <b0_1> <b1_0> <b1_1> <operation>\n\n" +
+
     "Where matrix elements are double-precision numbers, " +
     "and <operation> is one of '+', '-', '*', '=='. '!=' " +
-    "'det', 'T', 'inv'.\n";
+    "'det', 'T', 'inv'.\n" + 
+    "If you want to perform an operation only for the first matrix, " +
+    "you don't need to specify the second one.\n";
 }
 
 bool MatrixCalculator::validateNumberOfArguments(int argc,
