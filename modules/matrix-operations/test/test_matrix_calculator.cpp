@@ -39,3 +39,11 @@ private:
 
   Assert("This is a matrix calculator application.");
 }*/
+
+TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "*" };
+
+  Act(args);
+
+  Assert("Should be 9 or 6 or 5 arguments!");
+}
