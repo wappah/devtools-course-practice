@@ -143,6 +143,9 @@ bool Matrix::operator!= (const Matrix& _matrix) const {
 }
 
 double Matrix::determinant() {
+    if (rows == 2 && cols == 2) {
+      return data[0][0] * data[1][1] - data[0][1] * data[1][0];
+    }
     double sum12;
     double sum22;
     sum12 = 0.0;
@@ -222,7 +225,7 @@ std::ostringstream& operator<<(std::ostringstream& os, Matrix& m) {
   auto data = m.getData();
   for (int i = 0; i < m.getRows(); ++i) {
     for (int j = 0; j < m.getCols(); ++j) {
-      os << data[i][j] << " ";
+      os << std::round(data[i][j]) << " ";
     }
   }
   return os;

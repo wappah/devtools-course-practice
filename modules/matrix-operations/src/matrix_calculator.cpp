@@ -75,10 +75,10 @@ std::vector<double> MatrixCalculator::pushA(int argc,
   const char** argv) {
   std::vector<double> res(4);
 
-  res.push_back(parseDouble(argv[1]));
-  res.push_back(parseDouble(argv[2]));
-  res.push_back(parseDouble(argv[3]));
-  res.push_back(parseDouble(argv[4]));
+  res[0] = parseDouble(argv[1]);
+  res[1] = parseDouble(argv[2]);
+  res[2] = parseDouble(argv[3]);
+  res[3] = parseDouble(argv[4]);
 
   return res;
 }
@@ -86,10 +86,10 @@ std::vector<double> MatrixCalculator::pushB(int argc,
   const char** argv) {
   std::vector<double> res(4);
 
-  res.push_back(parseDouble(argv[5]));
-  res.push_back(parseDouble(argv[6]));
-  res.push_back(parseDouble(argv[7]));
-  res.push_back(parseDouble(argv[8]));
+  res[0] = parseDouble(argv[5]);
+  res[1] = parseDouble(argv[6]);
+  res[2] = parseDouble(argv[7]);
+  res[3] = parseDouble(argv[8]);
 
   return res;
 }
@@ -116,53 +116,61 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
     return str;
   }
 
-  Matrix lhs(2, 2);
+  Matrix lhs(2, 2, args.a);
   Matrix rhs(2, 2);
+  if (argc == 10) {
+    rhs = Matrix(2, 2, args.b);
+  }
   Matrix resMatrix(2, 2);
   bool resBool;
+  double resDouble;
   double scalar = args.c;
   std::ostringstream stream;
 
   switch (args.operation) {
   case '1':
     resMatrix = lhs + rhs;
-    stream << "A + B = ";
+    stream << "res = ";
     stream << resMatrix;
     break;
   case '2':
     resMatrix = lhs - rhs;
-    stream << "A - B = ";
+    stream << "res = ";
     stream << resMatrix;
     break;
   case '3':
-    if (argc == 10) {
+    if (argc == 7) {
       resMatrix = lhs * scalar;
-      stream << "c * A = ";
+      stream << "res = ";
     } else {
       resMatrix = lhs * rhs;
-      stream << "A * B = ";
+      stream << "res = ";
     }
     stream << resMatrix;
     break;
   case '5':
     resBool = lhs == rhs;
-    stream << "A == B: " << resBool;
+    stream << "res = ";
+    stream << resBool;
     break;
   case '6':
     resBool = lhs != rhs;
-    stream << "A != B: " << resBool;
+    stream << "res = ";
+    stream << resBool;
     break;
   case '7':
-    stream << "det(A) = " << lhs.determinant();
+    resDouble = lhs.determinant();
+    stream << "res = ";
+    stream << resDouble;
     break;
   case '8':
     resMatrix = lhs.transpose();
-    stream << "A.T = ";
+    stream << "res = ";
     stream << resMatrix;
     break;
   case '9':
     resMatrix = lhs.takeInverseMatrix();
-    stream << "A^(-1)";
+    stream << "res = ";
     stream << resMatrix;
     break;
   }

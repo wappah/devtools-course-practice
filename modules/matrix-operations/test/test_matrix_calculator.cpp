@@ -32,7 +32,7 @@ class MatrixCalculatorTest : public ::testing::Test {
   std::string output_;
 };
 
-TEST_F(MatrixCalculatorTest, DISABLED_Do_Print_Help_Without_Arguments) {
+TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
   std::vector<std::string> args = {};
 
   Act(args);
@@ -40,7 +40,7 @@ TEST_F(MatrixCalculatorTest, DISABLED_Do_Print_Help_Without_Arguments) {
   Assert("This is a matrix calculator application.");
 }
 
-TEST_F(MatrixCalculatorTest, DISABLED_Is_Checking_Number_Of_Arguments) {
+TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "*" };
 
   Act(args);
@@ -48,7 +48,7 @@ TEST_F(MatrixCalculatorTest, DISABLED_Is_Checking_Number_Of_Arguments) {
   Assert("Should be 9 or 6 or 5 arguments!");
 }
 
-TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Number_Format) {
+TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {
   std::vector<std::string> args = { "1.0", "kryak", "3.0", "1.0", "T" };
 
   Act(args);
@@ -56,7 +56,7 @@ TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Number_Format) {
   Assert("Wrong number format!");
 }
 
-TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Operation_Format) {
+TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "1.0",
     "2.0", "3.0", "2.0", "3.0", "+-" };
 
@@ -65,10 +65,74 @@ TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Operation_Format) {
   Assert("Wrong operation format!");
 }
 
-TEST_F(MatrixCalculatorTest, Can__Add_Matrixes) {
+TEST_F(MatrixCalculatorTest, Can_Add_Matrixes) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "4.0", "3.0", "2.0", "1.0", "+" };
 
   Act(args);
 
-  Assert("A + B = 5.0 5.0 5.0 5.0 ");
+  Assert("res = 5 5 5 5 ");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Substract_Matrixes) {
+  std::vector<std::string> args = { "5.0", "5.0", "5.0", "5.0", "1.0", "2.0", "3.0", "4.0", "-" };
+
+  Act(args);
+
+  Assert("res = 4 3 2 1 ");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Multiply_Matrixes) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "2.0", "5.0", "1.0", "3.0", "*" };
+
+  Act(args);
+
+  Assert("res = 4 11 10 27 ");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Multiply_Matrix_To_Scalar) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "12.0", "*" };
+
+  Act(args);
+
+  Assert("res = 12 24 36 48 ");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Ñompare_For_Equality) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "==" };
+
+  Act(args);
+
+  Assert("res = 1");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Ñompare_For_Inequality) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "!=" };
+
+  Act(args);
+
+  Assert("res = 0");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Get_Determinant) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "det" };
+
+  Act(args);
+
+  Assert("res = -2");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Get_Transpose_Matrix) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "T" };
+
+  Act(args);
+
+  Assert("res = 1 3 2 4 ");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Get_Inverse_Matrix) {
+  std::vector<std::string> args = { "6.0", "7.0", "7.0", "8.0", "inv" };
+
+  Act(args);
+
+  Assert("res = -8 7 7 -6 ");
 }
