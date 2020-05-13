@@ -45,21 +45,22 @@ double parseDouble(const char* arg) {
 }
 
 char parseOperation(const char* arg) {
-    char op;
-    if (strcmp(arg, "L1") == 0) {
-        op = '1';
-    } else if (strcmp(arg, "L2") == 0) {
-        op = '2';
-    } else if (strcmp(arg, "L3") == 0) {
-        op = '3';
-    } else if (strcmp(arg, "L4") == 0) {
-        op = '4';
-    } else if (strcmp(arg, "LInf") == 0) {
-        op = 'I';
+    char operation;
+    std::string notParsedOperation(arg);
+    if (notParsedOperation == "L1") {
+        operation = '1';
+    } else if (notParsedOperation == "L2") {
+        operation = '2';
+    } else if (notParsedOperation == "L3") {
+        operation = '3';
+    } else if (notParsedOperation == "L4") {
+        operation = '4';
+    } else if (notParsedOperation == "LInf") {
+        operation = 'I';
     } else {
         throw std::string("Wrong operation format!");
     }
-    return op;
+    return operation;
 }
 
 std::string DistanceCalculator::operator()(int argc, const char** argv) {
@@ -76,41 +77,33 @@ std::string DistanceCalculator::operator()(int argc, const char** argv) {
         args.vectorB[0] = parseDouble(argv[4]);
         args.vectorB[1] = parseDouble(argv[5]);
         args.vectorB[2] = parseDouble(argv[6]);
-        args.operation = parseOperation(argv[7]);
+        args.operation  = parseOperation(argv[7]);
     }
     catch(std::string& str) {
         return str;
     }
 
-
-    Metrics metrics(args.vectorA, args.vectorB);
-    double res;
     std::ostringstream stream;
+    Metrics metrics(args.vectorA, args.vectorB);
 
     switch (args.operation) {
      case '1':
-        res = metrics.getL1();
-        stream << "L1 = " << res;
+        stream << "L1 = " << metrics.getL1();
         break;
      case '2':
-        res = metrics.getL2();
-        stream << "L2 = " << res;
+        stream << "L2 = " << metrics.getL2();
         break;
      case '3':
-        res = metrics.getL3();
-        stream << "L3 = " << res;
+        stream << "L3 = " << metrics.getL3();
         break;
      case '4':
-         res = metrics.getL4();
-         stream << "L4 = " << res;
+         stream << "L4 = " << metrics.getL4();
          break;
      case 'I':
-         res = metrics.getLInf();
-         stream << "LInf = " << res;
+         stream << "LInf = " << metrics.getLInf();
          break;
     }
 
     message_ = stream.str();
-
     return message_;
 }
