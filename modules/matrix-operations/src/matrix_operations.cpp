@@ -201,3 +201,13 @@ Matrix Matrix::takeInverseMatrix() {
 
     return inv;
 }
+
+std::ostringstream& operator<<(std::ostringstream& os, Matrix& m) {
+  auto data = m.getData();
+  for (std::size_t i = 0; i < m.getRows(); ++i) {
+    for (std::size_t j = 0; j < m.getCols(); ++j) {
+      os << data[i][j] << " ";
+    }
+  }
+  return os;
+}
