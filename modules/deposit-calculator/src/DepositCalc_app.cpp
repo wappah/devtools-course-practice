@@ -54,7 +54,7 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
 
 double parseInt(const char* arg) {
   char* end;
-  double value = _strtoi64(arg, &end, 10);
+  int value = _strtoi64(arg, &end, 10);
 
   if (end[0]) {
     throw std::string("Wrong number format!");

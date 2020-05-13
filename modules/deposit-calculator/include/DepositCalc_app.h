@@ -8,7 +8,7 @@
 #include <vector>
 
 class DepositCalc_app {
-public:
+ public:
     DepositCalc_app();
     std::string operator()(int argc, const char** argv);
 

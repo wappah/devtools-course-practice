@@ -5,7 +5,7 @@
 extern const unsigned int max_period_days;
 class DepositCalc {
     int depositAmount;  // summa vklada
-    unsigned int period; 
+    unsigned int period;
     int rate;  // stavka
     int depositWithRate;
     int interestCharges;  // nachislenie procentov
