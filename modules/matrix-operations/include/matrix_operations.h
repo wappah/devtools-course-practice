@@ -1,5 +1,6 @@
 // Copyright 2020 Sokolov Andrey
 #include <vector>
+#include <sstream>
 
 #ifndef MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_OPERATIONS_H_
 #define MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_OPERATIONS_H_
@@ -33,6 +34,9 @@ class Matrix {
     double determinant();
     Matrix transpose();
     Matrix takeInverseMatrix();
+
+    friend std::ostringstream& operator<<(std::ostringstream& os,
+      Matrix& m);
 
  private:
     int rows;
