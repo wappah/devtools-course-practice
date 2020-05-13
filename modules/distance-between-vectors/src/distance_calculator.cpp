@@ -35,7 +35,7 @@ bool DistanceCalculator::validateNumberOfArguments(int          argc,
 }
 
 double parseDouble(const char* arg) {
-    double value{0};
+    double value;
     try {
         value = std::stod(arg);
     } catch (...) {
