@@ -67,7 +67,7 @@ set_tests_properties (${prefix}_can_hecking_Period_Smaller_Then_1827 PROPERTIES
 #############################################
 
 add_test(
-    NAME ${prefix}_can_Can_Calculate_Deposit
+    NAME ${prefix}_can_Calculate_Deposit
     COMMAND ${APPLICATION} 100000 366 10
 )
 set_tests_properties (${prefix}_can_Calculate_Deposit PROPERTIES
