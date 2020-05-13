@@ -29,7 +29,7 @@ bool MatrixCalculator::validateNumberOfArguments(int argc,
   if (argc == 1) {
     help(argv[0]);
     return false;
-  } else if (argc != 10 || argc != 7 || argc != 5) {
+  } else if (argc != 10 && argc != 7 && argc != 5) {
     help(argv[0], "Should be 9 or 6 or 5 arguments!\n\n");
     return false;
   }
