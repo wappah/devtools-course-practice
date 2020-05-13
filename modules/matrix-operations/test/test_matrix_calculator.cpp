@@ -97,7 +97,7 @@ TEST_F(MatrixCalculatorTest, Can_Multiply_Matrix_To_Scalar) {
   Assert("res = 12 24 36 48 ");
 }
 
-TEST_F(MatrixCalculatorTest, Can_Ñompare_For_Equality) {
+TEST_F(MatrixCalculatorTest, Can_Compare_For_Equality) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "==" };
 
   Act(args);
@@ -105,7 +105,7 @@ TEST_F(MatrixCalculatorTest, Can_Ñompare_For_Equality) {
   Assert("res = 1");
 }
 
-TEST_F(MatrixCalculatorTest, Can_Ñompare_For_Inequality) {
+TEST_F(MatrixCalculatorTest, Can_Compare_For_Inequality) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "!=" };
 
   Act(args);
