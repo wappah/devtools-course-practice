@@ -1,6 +1,7 @@
 // Copyright 2020 Guschin Alexandr
 
 #include "include/d-heap-sort.h"
+#include <algorithm>
 #include <cstring>
 #include <string>
 
