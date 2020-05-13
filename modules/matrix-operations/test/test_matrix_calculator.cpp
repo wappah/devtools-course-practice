@@ -66,7 +66,8 @@ TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
 }
 
 TEST_F(MatrixCalculatorTest, Can_Add_Matrixes) {
-  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "4.0", "3.0", "2.0", "1.0", "+" };
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0",
+    "4.0", "3.0", "2.0", "1.0", "+" };
 
   Act(args);
 
@@ -74,7 +75,8 @@ TEST_F(MatrixCalculatorTest, Can_Add_Matrixes) {
 }
 
 TEST_F(MatrixCalculatorTest, Can_Substract_Matrixes) {
-  std::vector<std::string> args = { "5.0", "5.0", "5.0", "5.0", "1.0", "2.0", "3.0", "4.0", "-" };
+  std::vector<std::string> args = { "5.0", "5.0", "5.0", "5.0",
+    "1.0", "2.0", "3.0", "4.0", "-" };
 
   Act(args);
 
@@ -82,7 +84,8 @@ TEST_F(MatrixCalculatorTest, Can_Substract_Matrixes) {
 }
 
 TEST_F(MatrixCalculatorTest, Can_Multiply_Matrixes) {
-  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "2.0", "5.0", "1.0", "3.0", "*" };
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0",
+    "2.0", "5.0", "1.0", "3.0", "*" };
 
   Act(args);
 
@@ -98,7 +101,8 @@ TEST_F(MatrixCalculatorTest, Can_Multiply_Matrix_To_Scalar) {
 }
 
 TEST_F(MatrixCalculatorTest, Can_Compare_For_Equality) {
-  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "==" };
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0",
+    "1.0", "2.0", "3.0", "4.0", "==" };
 
   Act(args);
 
@@ -106,7 +110,8 @@ TEST_F(MatrixCalculatorTest, Can_Compare_For_Equality) {
 }
 
 TEST_F(MatrixCalculatorTest, Can_Compare_For_Inequality) {
-  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "1.0", "2.0", "3.0", "4.0", "!=" };
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0",
+    "1.0", "2.0", "3.0", "4.0", "!=" };
 
   Act(args);
 
