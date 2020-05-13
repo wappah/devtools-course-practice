@@ -15,7 +15,7 @@ using std::vector;
 using ::testing::internal::RE;
 
 class DepositCalc_app_test : public ::testing::Test {
-protected:
+ protected:
   void Act(vector<string> args_) {
     vector<const char*> options;
     options.push_back("appname");
@@ -31,7 +31,7 @@ protected:
     EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
   }
 
-private:
+ private:
   DepositCalc_app app_;
   string output_;
 };
