@@ -7,8 +7,8 @@
  #include "include/matrix_calculator.h"
 
 int main(int argc, const char** argv) {
-    MatrixCalculator app;
+    /*MatrixCalculator app;
     std::string output = app(argc, argv);
-    printf("%s\n", output.c_str());
+    printf("%s\n", output.c_str());*/
     return 0;
 }

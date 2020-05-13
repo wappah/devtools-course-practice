@@ -32,6 +32,10 @@ private:
   std::string output_;
 };
 
-TEST(MatrixOperationsAppTest, test) {
-  ASSERT_EQ(0, 0);
-}
+/*TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
+  std::vector<std::string> args = {};
+
+  Act(args);
+
+  Assert("This is a matrix calculator application.");
+}*/
