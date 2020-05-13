@@ -57,8 +57,8 @@ int d_heap_sort::ParseArg(const char** Arg) {
 std::string d_heap_sort::operator()(int argc, const char** argv) {
   if (validateNumberOfArguments(argc, argv) == 0) return ret_str;
 
-  int i = 1;
   try {
+    int i = 1;
     while (i < argc) {
       int shift = ParseOp(argv + i);
       i += shift;
