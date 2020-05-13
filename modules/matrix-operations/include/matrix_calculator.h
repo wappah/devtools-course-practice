@@ -19,7 +19,7 @@ class MatrixCalculator {
   typedef struct {
     std::vector<double> a;
     std::vector<double> b;
-    double ñ;
+    double ñonst;
     char operation;
   } Arguments;
 };

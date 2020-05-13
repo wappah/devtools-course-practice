@@ -106,7 +106,7 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
       args.b = pushB(argc, argv);
       args.operation = parseOperation(argv[9]);
     } else if (argc == 7) {
-      args.ñ = parseDouble(argv[5]);
+      args.ñonst = parseDouble(argv[5]);
       args.operation = parseOperation(argv[6]);
     } else {
       args.operation = parseOperation(argv[5]);
@@ -120,7 +120,7 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
   Matrix rhs(2, 2);
   Matrix resMatrix(2, 2);
   bool resBool;
-  double scalar = args.ñ;
+  double scalar = args.ñonst;
   std::ostringstream stream;
 
   switch (args.operation) {
