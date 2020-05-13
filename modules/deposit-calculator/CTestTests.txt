@@ -60,7 +60,7 @@ add_test(
     NAME ${prefix}_can_Check_Period_Smaller_Then_1827
     COMMAND ${APPLICATION} 0 2000 0
 )
-set_tests_properties (${prefix}_can_hecking_Period_Smaller_Then_1827 PROPERTIES
+set_tests_properties (${prefix}_can_Check_Period_Smaller_Then_1827 PROPERTIES
     PASS_REGULAR_EXPRESSION "ERROR: Period cant be bigger then 1826"
     LABELS "${MODULE}")
 
