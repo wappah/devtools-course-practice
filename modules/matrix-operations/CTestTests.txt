@@ -50,3 +50,19 @@ add_test(
 set_tests_properties (${prefix}_Can_Add_Matrixes PROPERTIES
     PASS_REGULAR_EXPRESSION "res = 5 5 5 5 "
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Substract_Matrixes
+    COMMAND ${APPLICATION} 5.0 5.0 5.0 5.0 1.0 2.0 3.0, 4.0 -
+)
+set_tests_properties (${prefix}_Can_Substract_Matrixes PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 4 3 2 1 "
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Multiply_Matrixes
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 2.0 5.0 1.0 3.0 *
+)
+set_tests_properties (${prefix}_Can_Multiply_Matrixes PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 4 11 10 27 "
+    LABELS "${MODULE}")
