@@ -5,7 +5,7 @@
 #include <cstring>
 #include <string>
 
-d_heap_sort::d_heap_sort() { ret_str = ""; }
+d_heap_sort::d_heap_sort():ret_str("") {}
 
 bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
   if (argc == 1) {
