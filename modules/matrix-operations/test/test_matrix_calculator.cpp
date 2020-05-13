@@ -32,7 +32,7 @@ class MatrixCalculatorTest : public ::testing::Test {
   std::string output_;
 };
 
-TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
+TEST_F(MatrixCalculatorTest, DISABLED_Do_Print_Help_Without_Arguments) {
   std::vector<std::string> args = {};
 
   Act(args);
@@ -40,7 +40,7 @@ TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
   Assert("This is a matrix calculator application.");
 }
 
-TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
+TEST_F(MatrixCalculatorTest, DISABLED_Is_Checking_Number_Of_Arguments) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "*" };
 
   Act(args);
@@ -48,7 +48,7 @@ TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
   Assert("Should be 9 or 6 or 5 arguments!");
 }
 
-TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {
+TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Number_Format) {
   std::vector<std::string> args = { "1.0", "kryak", "3.0", "1.0", "T" };
 
   Act(args);
@@ -56,11 +56,19 @@ TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {
   Assert("Wrong number format!");
 }
 
-TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
+TEST_F(MatrixCalculatorTest, DISABLED_Can_Detect_Wrong_Operation_Format) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "1.0",
     "2.0", "3.0", "2.0", "3.0", "+-" };
 
   Act(args);
 
   Assert("Wrong operation format!");
+}
+
+TEST_F(MatrixCalculatorTest, Can__Add_Matrixes) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "4.0", "4.0", "3.0", "2.0", "1.0", "+" };
+
+  Act(args);
+
+  Assert("A + B = 5.0 5.0 5.0 5.0 ");
 }

@@ -127,10 +127,12 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
   case '1':
     resMatrix = lhs + rhs;
     stream << "A + B = ";
+    stream << resMatrix;
     break;
   case '2':
     resMatrix = lhs - rhs;
     stream << "A - B = ";
+    stream << resMatrix;
     break;
   case '3':
     if (argc == 10) {
@@ -140,6 +142,7 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
       resMatrix = lhs * rhs;
       stream << "A * B = ";
     }
+    stream << resMatrix;
     break;
   case '5':
     resBool = lhs == rhs;
@@ -155,10 +158,12 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
   case '8':
     resMatrix = lhs.transpose();
     stream << "A.T = ";
+    stream << resMatrix;
     break;
   case '9':
     resMatrix = lhs.takeInverseMatrix();
     stream << "A^(-1)";
+    stream << resMatrix;
     break;
   }
 

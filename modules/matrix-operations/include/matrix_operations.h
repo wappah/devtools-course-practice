@@ -12,6 +12,7 @@ class Matrix {
            const int _cols,
            std::vector<std::vector<double>> _data);
     Matrix(const Matrix& _matrix);
+    Matrix(const int _rows, const int _cols, std::vector<double> _data);
 
     int getRows() const;
     int getCols() const;

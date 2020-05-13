@@ -16,6 +16,22 @@ Matrix::Matrix(const int                              _rows,
                                                                cols(_cols),
                                                                data(_data) {}
 
+Matrix::Matrix(const int _rows, const int _cols, std::vector<double> _data) {
+  rows = _rows;
+  cols = _cols;
+  data = std::vector<std::vector<double>>(rows);
+  for (int i = 0; i < rows; ++i) {
+    data[i] = std::vector<double>(cols);
+  }
+
+  for (int i = 0; i < rows; ++i) {
+    for (int j = 0; j < cols; ++j) {
+      int idx = i * cols + j;
+      data[i][j] = _data[idx];
+    }
+  }
+}
+
 Matrix::Matrix(const Matrix& _matrix) : rows(_matrix.rows),
                                         cols(_matrix.cols),
                                         data(_matrix.data) {}
