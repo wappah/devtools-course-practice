@@ -29,8 +29,7 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
   if (argc == 1) {
     help(argv[0]);
     return false;
-  }
-  else if (argc != 4) {
+  } else if (argc != 4) {
     help(argv[0], "ERROR: Should be 3 arguments.\n\n");
     return false;
   }
