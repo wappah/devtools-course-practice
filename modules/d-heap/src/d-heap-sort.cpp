@@ -1,7 +1,6 @@
 // Copyright 2020 Guschin Alexandr
 
 #include "include/d-heap-sort.h"
-#include <algorithm>
 #include <cstring>
 #include <string>
 
@@ -29,7 +28,7 @@ int d_heap_sort::ParseOp(const char** Op) {
   if (strcmp(Op[0], "sort") == 0) {
     d_heap copy(heap);
     while (copy.getCount() != 0) {
-      ret_str += std::to_string(copy[0]) += " ";
+      ret_str += std::to_string(copy[0]) + " ";
       copy.del(0);
     }
     ret_str += "\n";
@@ -39,7 +38,7 @@ int d_heap_sort::ParseOp(const char** Op) {
   if (strcmp(Op[0], "show") == 0) {
     int size = heap.getCount();
     for (int i = 0; i < size; ++i)
-      ret_str += std::to_string(heap[i]) += " ";
+      ret_str += std::to_string(heap[i]) + " ";
     ret_str += "\n";
     return 0;
   }
@@ -57,10 +56,12 @@ int d_heap_sort::ParseArg(const char** Arg) {
 std::string d_heap_sort::operator()(int argc, const char** argv) {
   if (validateNumberOfArguments(argc, argv) == 0) return ret_str;
 
+  int i = 1;
   try {
-    for (int i = 1; i < argc; ++i) {
+    while (i < argc) {
       int shift = ParseOp(argv + i);
       i += shift;
+      ++i;
     }
   } catch (std::string& str) {
     return str;
