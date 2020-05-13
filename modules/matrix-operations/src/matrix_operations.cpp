@@ -204,8 +204,8 @@ Matrix Matrix::takeInverseMatrix() {
 
 std::ostringstream& operator<<(std::ostringstream& os, Matrix& m) {
   auto data = m.getData();
-  for (std::size_t i = 0; i < m.getRows(); ++i) {
-    for (std::size_t j = 0; j < m.getCols(); ++j) {
+  for (int i = 0; i < m.getRows(); ++i) {
+    for (int j = 0; j < m.getCols(); ++j) {
       os << data[i][j] << " ";
     }
   }
