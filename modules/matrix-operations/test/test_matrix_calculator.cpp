@@ -38,7 +38,7 @@ private:
   Act(args);
 
   Assert("This is a matrix calculator application.");
-}*/
+}
 
 TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "*" };
@@ -47,3 +47,20 @@ TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
 
   Assert("Should be 9 or 6 or 5 arguments!");
 }
+
+TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {
+  std::vector<std::string> args = { "1.0", "kryak", "3.0", "1.0", "T" };
+
+  Act(args);
+
+  Assert("Wrong number format!");
+}
+
+TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
+  std::vector<std::string> args = { "1.0", "2.0", "3.0", "1.0",
+    "2.0", "3.0", "2.0", "3.0", "+-" };
+
+  Act(args);
+
+  Assert("Wrong operation format!");
+}*/

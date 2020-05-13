@@ -35,3 +35,38 @@ bool MatrixCalculator::validateNumberOfArguments(int argc,
   }
   return true;
 }
+
+double parseDouble(const char* arg) {
+  char* end;
+  double value = strtod(arg, &end);
+
+  if (end[0]) {
+    throw std::string("Wrong number format!");
+  }
+
+  return value;
+}
+
+char parseOperation(const char* arg) {
+  char op;
+  if (strcmp(arg, "+") == 0) {
+    op = '1';
+  } else if (strcmp(arg, "-") == 0) {
+    op = '2';
+  } else if (strcmp(arg, "*") == 0) {
+    op = '3';
+  } else if (strcmp(arg, "==") == 0) {
+    op = '5';
+  } else if (strcmp(arg, "!=") == 0) {
+    op = '6';
+  } else if (strcmp(arg, "det") == 0) {
+    op = '7';
+  } else if (strcmp(arg, "T") == 0) {
+    op = '8';
+  } else if (strcmp(arg, "inv") == 0) {
+    op = '9';
+  } else {
+    throw std::string("Wrong operation format!");
+  }
+  return op;
+}
