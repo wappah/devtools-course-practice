@@ -66,3 +66,51 @@ add_test(
 set_tests_properties (${prefix}_Can_Multiply_Matrixes PROPERTIES
     PASS_REGULAR_EXPRESSION "res = 4 11 10 27 "
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Multiply_Matrix_To_Scalar
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 12.0 *
+)
+set_tests_properties (${prefix}_Can_Multiply_Matrix_To_Scalar PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 12 24 36 48 "
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Compare_For_Equality
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 1.0 2.0 3.0 4.0 ==
+)
+set_tests_properties (${prefix}_Can_Compare_For_Equality PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 1"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Compare_For_Inequality
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 1.0 2.0 3.0 4.0 !=
+)
+set_tests_properties (${prefix}_Can_Compare_For_Inequality PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 0"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Get_Determinant
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 det
+)
+set_tests_properties (${prefix}_Can_Get_Determinant PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = -2"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Get_Transpose_Matrix
+    COMMAND ${APPLICATION} 1.0 2.0 3.0 4.0 T
+)
+set_tests_properties (${prefix}_Can_Get_Transpose_Matrix PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = 1 3 2 4 "
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_Can_Get_Inverse_Matrix
+    COMMAND ${APPLICATION} 6.0 7.0 7.0 8.0 inv
+)
+set_tests_properties (${prefix}_Can_Get_Inverse_Matrix PROPERTIES
+    PASS_REGULAR_EXPRESSION "res = -8 7 7 -6 "
+    LABELS "${MODULE}")
