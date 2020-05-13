@@ -27,7 +27,7 @@ class MatrixCalculatorTest : public ::testing::Test {
     EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
   }
 
-private:
+ private:
   MatrixCalculator app_;
   std::string output_;
 };
