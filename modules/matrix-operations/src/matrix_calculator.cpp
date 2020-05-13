@@ -25,8 +25,8 @@ void MatrixCalculator::help(const char* appname, const char* message) {
     "Where matrix elements are double-precision numbers, " +
     "and <operation> is one of '+', '-', '*', '=='. '!=' " +
     "'det', 'T', 'inv'.\n" + 
-    "If you want to perform an operation only for the first matrix, " +
-    "you don't need to specify the second one.\n";
+    "If you want to perform an operation only for the " +
+    "first matrix, you don't need to specify the second one.\n";
 }
 
 bool MatrixCalculator::validateNumberOfArguments(int argc,
