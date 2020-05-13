@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <vector>
+#include <string>
 #include <sstream>
 
 #include "include/matrix_operations.h"
