@@ -4,8 +4,6 @@
 #define MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_APP_H_
 
 #include <string>
-#include <utility>
-#include <vector>
 
 class DepositCalc_app {
  public:
