@@ -1,15 +1,11 @@
 // Copyright 2020 Sokolov Andrey
 
-#include "include/distance_calculator.h"
-#include "include/distance_between_vectors.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <vector>
 #include <string>
 #include <sstream>
+
+#include "include/distance_calculator.h"
+#include "include/distance_between_vectors.h"
 
 DistanceCalculator::DistanceCalculator() : message_("") {}
 
@@ -39,13 +35,12 @@ bool DistanceCalculator::validateNumberOfArguments(int          argc,
 }
 
 double parseDouble(const char* arg) {
-    char* end;
-    double value = strtod(arg, &end);
-
-    if (end[0]) {
+    double value{0};
+    try {
+        value = std::stod(arg);
+    } catch (...) {
         throw std::string("Wrong number format!");
     }
-
     return value;
 }
 
@@ -69,34 +64,26 @@ char parseOperation(const char* arg) {
 
 std::string DistanceCalculator::operator()(int argc, const char** argv) {
     Arguments args;
-
+    args.vectorA.resize(3, 0);
+    args.vectorB.resize(3, 0);
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
     try {
-        args.x1 = parseDouble(argv[1]);
-        args.y1 = parseDouble(argv[2]);
-        args.z1 = parseDouble(argv[3]);
-        args.x2 = parseDouble(argv[4]);
-        args.y2 = parseDouble(argv[5]);
-        args.z2 = parseDouble(argv[6]);
+        args.vectorA[0] = parseDouble(argv[1]);
+        args.vectorA[1] = parseDouble(argv[2]);
+        args.vectorA[2] = parseDouble(argv[3]);
+        args.vectorB[0] = parseDouble(argv[4]);
+        args.vectorB[1] = parseDouble(argv[5]);
+        args.vectorB[2] = parseDouble(argv[6]);
         args.operation = parseOperation(argv[7]);
     }
     catch(std::string& str) {
         return str;
     }
 
-    std::vector<float> fst;
-    std::vector<float> sec;
 
-    fst.push_back(args.x1);
-    fst.push_back(args.y1);
-    fst.push_back(args.z1);
-    sec.push_back(args.x2);
-    sec.push_back(args.y2);
-    sec.push_back(args.z2);
-
-    Metrics metrics(fst, sec);
+    Metrics metrics(args.vectorA, args.vectorB);
     double res;
     std::ostringstream stream;
 
