@@ -7,7 +7,7 @@ d_heap::d_heap()
     : d(2),
       size(1),
       count(0),
-      keys(reinterpret_cast<size_t*>(operator new(sizeof(size_t) * 3))) {
+      keys(reinterpret_cast<size_t*>(operator new(sizeof(size_t)))) {
   new (keys) size_t(-1);
 }
 

@@ -3,10 +3,6 @@
 #ifndef MODULES_D_HEAP_INCLUDE_D_HEAP_SORT_H_
 #define MODULES_D_HEAP_INCLUDE_D_HEAP_SORT_H_
 
-#include <stdint.h>
-#include <algorithm>
-#include <iostream>
-#include <vector>
 #include <string>
 #include "include/d-heap.h"
 
