@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <vector>
+#include <sstream>
 
 #include "include/matrix_operations.h"
 
@@ -426,4 +427,20 @@ TEST(MatrixOperationsTest, Different_Matrices_Not_Eqal) {
 
     // Act & Assert
     EXPECT_TRUE(matrixA != matrixB);
+}
+
+TEST(MatrixOperationsTest, Can_Print_Matrix) {
+  // Arrange
+  int cols = 2;
+  int rows = 2;
+  Matrix matrix(cols, rows);
+  std::ostringstream stream;
+  std::string expect = "0 0 0 0 ";
+
+  // Act
+  stream << matrix;
+  std::string res = stream.str();
+
+  // Assert
+  EXPECT_TRUE(res == expect);
 }
