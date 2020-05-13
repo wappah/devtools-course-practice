@@ -98,7 +98,7 @@ set_tests_properties (${prefix}_can_Calculate_Deposit_With_Big_Period PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Calculate_Deposit_With_Zero_Rate
-    COMMAND ${APPLICATION} 100000 366 10
+    COMMAND ${APPLICATION} 100000 366 0
 )
 set_tests_properties (${prefix}_can_Calculate_Deposit_With_Zero_Rate PROPERTIES
     PASS_REGULAR_EXPRESSION "Deposit with rate = 100000, interest charges = 0"
