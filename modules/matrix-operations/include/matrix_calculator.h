@@ -3,6 +3,7 @@
 #define MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_CALCULATOR_H_
 
 #include <string>
+#include <vector>
 
 class MatrixCalculator {
  public:
@@ -12,9 +13,14 @@ class MatrixCalculator {
  private:
   void help(const char* appname, const char* message = "");
   bool validateNumberOfArguments(int argc, const char** argv);
+  std::vector<double> pushA(int argc, const char** argv);
+  std::vector<double> pushB(int argc, const char** argv);
   std::string message_;
   typedef struct {
-    double _zero;
+    std::vector<double> a;
+    std::vector<double> b;
+    double ñ;
+    char operation;
   } Arguments;
 };
 

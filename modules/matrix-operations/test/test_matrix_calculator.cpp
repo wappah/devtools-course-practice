@@ -32,7 +32,7 @@ private:
   std::string output_;
 };
 
-/*TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
+TEST_F(MatrixCalculatorTest, Do_Print_Help_Without_Arguments) {
   std::vector<std::string> args = {};
 
   Act(args);
@@ -63,4 +63,4 @@ TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
   Act(args);
 
   Assert("Wrong operation format!");
-}*/
+}
