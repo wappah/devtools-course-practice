@@ -215,6 +215,19 @@ TEST_F(DistanceBetweenVectorsTest, can_return_l2_metric_2) {
   delete metrics;
 }
 
+TEST_F(DistanceBetweenVectorsTest, can_return_l2_metric_3) {
+    // Arrange
+    Metrics* metrics = metricsFactory::create("L2");
+    double expectedRes = 0.0;
+
+    // Act
+    double res = metrics->getMetrics();
+
+    // Assert
+    EXPECT_NEAR(res, expectedRes, DistanceBetweenVectorsTest::epsilon);
+    delete metrics;
+}
+
 TEST_F(DistanceBetweenVectorsTest, can_return_l3_metric_1) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
@@ -243,6 +256,19 @@ TEST_F(DistanceBetweenVectorsTest, can_return_l3_metric_2) {
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
   delete metrics;
+}
+
+TEST_F(DistanceBetweenVectorsTest, can_return_l3_metric_3) {
+    // Arrange
+    Metrics* metrics = metricsFactory::create("L3");
+    double expectedRes = 0.0;
+
+    // Act
+    double res = metrics->getMetrics();
+
+    // Assert
+    EXPECT_NEAR(res, expectedRes, DistanceBetweenVectorsTest::epsilon);
+    delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l4_metric_1) {
@@ -275,6 +301,19 @@ TEST_F(DistanceBetweenVectorsTest, can_return_l4_metric_2) {
   delete metrics;
 }
 
+TEST_F(DistanceBetweenVectorsTest, can_return_l4_metric_3) {
+    // Arrange
+    Metrics* metrics = metricsFactory::create("L4");
+    double expectedRes = 0.0;
+
+    // Act
+    double res = metrics->getMetrics();
+
+    // Assert
+    EXPECT_NEAR(res, expectedRes, DistanceBetweenVectorsTest::epsilon);
+    delete metrics;
+}
+
 TEST_F(DistanceBetweenVectorsTest, can_return_l_inf_metric_1) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
@@ -303,6 +342,19 @@ TEST_F(DistanceBetweenVectorsTest, can_return_l_inf_metric_2) {
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
   delete metrics;
+}
+
+TEST_F(DistanceBetweenVectorsTest, can_return_linf_metric_3) {
+    // Arrange
+    Metrics* metrics = metricsFactory::create("LInf");
+    double expectedRes = 0.0;
+
+    // Act
+    double res = metrics->getMetrics();
+
+    // Assert
+    EXPECT_NEAR(res, expectedRes, DistanceBetweenVectorsTest::epsilon);
+    delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, test) {
