@@ -48,8 +48,8 @@ double parseDouble(const char* arg) {
 Metrics* createMetrics(const std::string& operation,
                        const std::vector<float>& vectorA,
                        const std::vector<float>& vectorB) {
-  Metrics* metrics;
   try {
+    Metrics* metrics;
     return metrics = metricsFactory::create(operation, vectorA, vectorB);
   }
   catch (...) {

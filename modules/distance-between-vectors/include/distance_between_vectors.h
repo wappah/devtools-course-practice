@@ -20,7 +20,8 @@ class Metrics {
 
     void setFirst(const std::vector<float>& _fst);
     void setSecond(const std::vector<float>& _sec);
-    void setBoth(const std::vector<float>& _fst, const std::vector<float>& _sec);
+    void setBoth(const std::vector<float>& _fst,
+                 const std::vector<float>& _sec);
 
     virtual double getMetrics() const;
 };
@@ -36,7 +37,7 @@ class MetricsL1 : public Metrics {
 };
 
 class MetricsL2 : public Metrics {
-public:
+ public:
     MetricsL2() : Metrics() {}
     MetricsL2(const std::vector<float>& _fst,
               const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
@@ -45,7 +46,7 @@ public:
 };
 
 class MetricsL3 : public Metrics {
-public:
+ public:
     MetricsL3() : Metrics() {}
     MetricsL3(const std::vector<float>& _fst,
               const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
@@ -56,7 +57,6 @@ public:
 class MetricsL4 : public Metrics {
 public:
     MetricsL4() : Metrics() {}
-    MetricsL4(const Metrics&) : Metrics() {}
     MetricsL4(const std::vector<float>& _fst,
               const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
     ~MetricsL4() = default;
