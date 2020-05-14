@@ -11,9 +11,9 @@ class Metrics {
 
  public:
     Metrics();
-    Metrics(const Metrics&) = default;
-    Metrics(const std::vector<float>& _fst, const std::vector<float>& _sec);
-    virtual ~Metrics() = default;
+    Metrics(const std::vector<float>& _fst,
+            const std::vector<float>& _sec);
+    virtual ~Metrics() {}
 
     std::vector<float> getFirst() const;
     std::vector<float> getSecond() const;
@@ -23,52 +23,51 @@ class Metrics {
     void setBoth(const std::vector<float>& _fst,
                  const std::vector<float>& _sec);
 
-    virtual double getMetrics() const;
+    virtual double getMetrics() const = 0;
 };
 
-class MetricsL1 : public Metrics {
+class L1 : public Metrics {
  public:
-    MetricsL1() : Metrics() {}
-    MetricsL1(const std::vector<float>& _fst,
-              const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~MetricsL1() = default;
-
+    L1() : Metrics() {}
+    L1(const std::vector<float>& _fst,
+       const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
+    ~L1() = default;
     double getMetrics() const final;
 };
 
-class MetricsL2 : public Metrics {
+class L2 : public Metrics {
  public:
-    MetricsL2() : Metrics() {}
-    MetricsL2(const std::vector<float>& _fst,
-              const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~MetricsL2() = default;
+    L2() : Metrics() {}
+    L2(const std::vector<float>& _fst,
+       const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
+    ~L2() = default;
     double getMetrics() const final;
 };
 
-class MetricsL3 : public Metrics {
+class L3 : public Metrics {
  public:
-    MetricsL3() : Metrics() {}
-    MetricsL3(const std::vector<float>& _fst,
-              const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~MetricsL3() = default;
+    L3() : Metrics() {}
+    L3(const std::vector<float>& _fst,
+       const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
+    ~L3() = default;
     double getMetrics() const final;
 };
 
-class MetricsL4 : public Metrics {
+class L4 : public Metrics {
  public:
-    MetricsL4() : Metrics() {}
-    MetricsL4(const std::vector<float>& _fst,
-              const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~MetricsL4() = default;
+    L4() : Metrics() {}
+    L4(const std::vector<float>& _fst,
+       const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
+    ~L4() = default;
     double getMetrics() const final;
 };
 
-class MetricsLInf : public Metrics {
+class LInf : public Metrics {
  public:
-    MetricsLInf() : Metrics() {}
-    MetricsLInf(const std::vector<float>& _fst,
-                const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~MetricsLInf() = default;
+    LInf() : Metrics() {}
+    LInf(const std::vector<float>& _fst,
+         const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
+    ~LInf() = default;
     double getMetrics() const final;
 };
 

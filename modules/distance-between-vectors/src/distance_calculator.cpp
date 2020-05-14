@@ -23,7 +23,7 @@ void DistanceCalculator::help(const char* appname, const char* message) {
           "and <metrics> is one of 'L1', 'L2', 'L3', 'L4', 'LInf'.\n";
 }
 
-bool DistanceCalculator::validateNumberOfArguments(int          argc,
+bool DistanceCalculator::validateNumberOfArguments(int argc,
                                                    const char** argv) {
     if (argc == 1) {
         help(argv[0]);
@@ -45,17 +45,6 @@ double parseDouble(const char* arg) {
     return value;
 }
 
-Metrics* createMetrics(const std::string& operation,
-                       const std::vector<float>& vectorA,
-                       const std::vector<float>& vectorB) {
-  try {
-    return metricsFactory::create(operation, vectorA, vectorB);
-  }
-  catch (...) {
-    throw std::string("Wrong operation name!");
-  }
-}
-
 std::string DistanceCalculator::operator()(int argc, const char** argv) {
     Arguments args;
     args.vectorA.resize(3, 0);
@@ -63,6 +52,7 @@ std::string DistanceCalculator::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
+    Metrics* metrics;
     try {
         args.vectorA[0] = parseDouble(argv[1]);
         args.vectorA[1] = parseDouble(argv[2]);
@@ -71,19 +61,9 @@ std::string DistanceCalculator::operator()(int argc, const char** argv) {
         args.vectorB[1] = parseDouble(argv[5]);
         args.vectorB[2] = parseDouble(argv[6]);
         args.operation  = std::string(argv[7]);
-    }
-    catch(std::string& str) {
-        return str;
-    }
 
-    Metrics* metrics;
-
-    try {
-        metrics = createMetrics(args.operation,
-                                args.vectorA,
-                                args.vectorB);
-    }
-    catch (std::string& str) {
+        metrics = MetricsFactory::create(args.operation, args.vectorA, args.vectorB);
+    } catch (std::string& str) {
         return str;
     }
     std::ostringstream stream;
