@@ -34,17 +34,3 @@ void QuickSort::QSort(int _first, int _last) {
   }
 }
 
-std::vector<int> QuickSort::main() {
-  if (vector.empty())
-    throw "Matrix is empty";
-  bool flag = true;
-  for (unsigned int i = 0; i < vector.size() - 1; i++)
-    if (vector[i] > vector[i + 1]) {
-      flag = false;
-      break;
-    }
-  if (flag == true)
-    throw "Vector is sorted";
-  QSort(0, vector.size() - 1);
-  return GetVector();
-}

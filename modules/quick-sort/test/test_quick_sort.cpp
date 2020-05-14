@@ -15,10 +15,9 @@ TEST(Golovanova_Elena_QuickSortTest, Assignment_Vector) {
 
 TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
   // Arrange
-  std::vector<int> example = {6, 3, 1, 5};
   std::vector<int> wait = { 1, 3, 5, 6 };
   // Act
-  QuickSort Elementary(example);
+  QuickSort Elementary(wait);
   Elementary.QSort(0,3);
   // Assert
   ASSERT_EQ(wait, Elementary.GetVector());
