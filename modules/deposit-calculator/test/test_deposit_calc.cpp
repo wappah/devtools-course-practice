@@ -88,5 +88,5 @@ TEST(DepositCalculatorTest, Can_Throw_Exception_If_Zero_Rate) {
     // Arrange & Act
     DepositCalc dep(1, 1, 1);
     // Assert
-   ASSERT_ANY_THROW(dep.setRate(0));
+    ASSERT_ANY_THROW(dep.setRate(0));
 }
