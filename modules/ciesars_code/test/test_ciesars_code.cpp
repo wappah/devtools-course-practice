@@ -11,12 +11,12 @@ class CiesarsCodeTest : public ::testing::Test {
     const int negative_key = -13;
     const int big_key = 37;
     const std::string empty_message = "";
-    const std::string message = "Development";
-    const std::string message_positive_encode = "Opgpwzaxpye";
-    const std::string message_negative_encode = "Qrirybczrag";
-    const std::string complex_message = "Development 2019_C++";
-    const std::string complex_message_positive_encode = "Opgpwzaxpye 2019_N++";
-    const std::string complex_message_negative_encode = "Qrirybczrag 2019_P++";
+    const std::string message = "Compatibility";
+    const std::string message_positive_encode = "Nzxaletmtwtej";
+    const std::string message_negative_encode = "Pbzcngvovyvgl";
+    const std::string complex_message = "Development 2020_C++";
+    const std::string complex_message_positive_encode = "Opgpwzaxpye 2020_N++";
+    const std::string complex_message_negative_encode = "Qrirybczrag 2020_P++";
 };
 
 TEST_F(CiesarsCodeTest, Empty_Message_Encoder_With_Zero_Key_Is_Correct) {
