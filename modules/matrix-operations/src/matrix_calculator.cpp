@@ -3,10 +3,6 @@
 #include "include/matrix_calculator.h"
 #include "include/matrix_operations.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
 #include <vector>
 #include <string>
 #include <sstream>
