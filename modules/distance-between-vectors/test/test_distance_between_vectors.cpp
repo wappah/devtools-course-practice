@@ -320,12 +320,12 @@ TEST_F(DistanceBetweenVectorsTest, test) {
   delete metrics;
 }
 
-TEST_F(DistanceBetweenVectorsTest, factory_cant_recognize_operation_without_args) {
+TEST(metrics_factory, factory_cant_recognize_operation_without_args) {
   // Arrange & Act & Assert
   EXPECT_ANY_THROW(metricsFactory::create("L666"););
 }
 
-TEST_F(DistanceBetweenVectorsTest, factory_cant_recognize_operation_whith_args) {
+TEST(metrics_factory, factory_cant_recognize_operation_whith_args) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
