@@ -95,13 +95,16 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
   }
   try {
     args.a = pushA(argc, argv);
-    if (argc == 10) {
+    switch (argc) {
+    case 10:
       args.b = pushB(argc, argv);
       args.operation = parseOperation(argv[9]);
-    } else if (argc == 7) {
+      break;
+    case 7:
       args.c = std::stod(argv[5]);
       args.operation = parseOperation(argv[6]);
-    } else {
+      break;
+    default:
       args.operation = parseOperation(argv[5]);
     }
   }
