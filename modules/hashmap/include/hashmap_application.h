@@ -9,7 +9,7 @@
 
 class hashmapApp {
  public:
-    hashmapApp() : _hashmap(10) {}
+    hashmapApp();
     std::string operator()(int argc, const char** argv);
  private:
     std::string help(const char* appname, const char* message = "");

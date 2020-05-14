@@ -89,3 +89,11 @@ TEST_F(HashmapAppTest, Cant_Remove_Not_Existing_Elem) {
 
     Assert("\\(No value with this key\\)");
 }
+
+TEST_F(HashmapAppTest, Cant_Insert_Out_Of_Range_Elem) {
+    std::vector<std::string> args = {"insert", "1", "12000000000000"};
+
+    Act(args);
+
+    Assert("\\(Out of range\\)");
+}

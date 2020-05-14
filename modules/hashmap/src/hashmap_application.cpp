@@ -7,6 +7,8 @@
 #include <cctype>
 #include "include/hashmap_application.h"
 
+hashmapApp::hashmapApp() : _hashmap(10) {}
+
 std::string hashmapApp::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {
         return _sstream.str();
@@ -52,7 +54,13 @@ int hashmapApp::parseToValue(const char* strval) {
             throw
                 std::invalid_argument("Invalid value: " + std::string(strval));
     }
-    return std::atoi(strval);
+    int res = 0;
+    try {
+        res = std::stoi(strval);
+    } catch (std::exception& exc) {
+            _sstream << "(Out of range)";
+    }
+    return res;
 }
 
 int hashmapApp::parseOperation(const char** ops) {
