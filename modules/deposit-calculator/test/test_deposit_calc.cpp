@@ -76,3 +76,17 @@ TEST(DepositCalculatorTest, Can_Throw_Exception_If_Period_More_Than_1826) {
     // Assert
     ASSERT_ANY_THROW(dep.setPeriod(1827));
 }
+
+TEST(DepositCalculatorTest, Can_Throw_Exception_If_Zero_Deposit_Amount) {
+    // Arrange & Act
+    DepositCalc dep(1, 1, 1);
+    // Assert
+    ASSERT_ANY_THROW(dep.setPeriod(0));
+}
+
+TEST(DepositCalculatorTest, Can_Throw_Exception_If_Zero_Rate) {
+    // Arrange & Act
+    DepositCalc dep(1, 1, 1);
+    // Assert
+   ASSERT_ANY_THROW(dep.setRate(0));
+}
