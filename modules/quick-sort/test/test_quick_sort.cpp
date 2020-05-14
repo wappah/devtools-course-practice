@@ -18,7 +18,7 @@ TEST(Golovanova_Elena_QuickSortTest, Sort_Works) {
   std::vector<int> wait = { 1, 3, 5, 6 };
   // Act
   QuickSort Elementary(wait);
-  Elementary.QSort( 0, 3 );
+  Elementary.QSort(0, 3);
   // Assert
   ASSERT_EQ(wait, Elementary.GetVector());
 }
