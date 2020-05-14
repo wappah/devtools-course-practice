@@ -52,8 +52,8 @@ std::string CiesarsCodeApplication::getHelpMessage() {
 }
 
 std::string CiesarsCodeApplication::decodeFile(std::string in_filename,
-                                                 std::string out_filename,
-                                                 int key) {
+                                               std::string out_filename,
+                                               int key) {
   filetext_ = "";
   if (readFile(in_filename)) {
     filetext_ = code_.decode(filetext_, key);
@@ -63,8 +63,8 @@ std::string CiesarsCodeApplication::decodeFile(std::string in_filename,
 }
 
 std::string CiesarsCodeApplication::encodeFile(std::string in_filename,
-                                                 std::string out_filename,
-                                                 int key) {
+                                               std::string out_filename,
+                                               int key) {
   filetext_ = "";
   if (readFile(in_filename)) {
     filetext_ = code_.encode(filetext_, key);

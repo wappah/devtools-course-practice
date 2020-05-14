@@ -18,9 +18,9 @@ class CiesarsCodeApplication {
   std::string operator()(int argc, const char** argv);
   std::string getHelpMessage();
   std::string decodeFile(std::string in_filename, std::string out_filename,
-                          int key);
+                         int key);
   std::string encodeFile(std::string in_filename, std::string out_filename,
-                          int key);
+                         int key);
 };
 
 #endif  // MODULES_CIESARS_CODE_INCLUDE_CIESARS_CODE_APPLICATION_H_
