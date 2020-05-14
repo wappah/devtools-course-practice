@@ -74,6 +74,7 @@ std::vector<double> MatrixCalculator::pushA(int argc,
 
   return res;
 }
+
 std::vector<double> MatrixCalculator::pushB(int argc,
   const char** argv) {
   std::vector<double> res(4);
