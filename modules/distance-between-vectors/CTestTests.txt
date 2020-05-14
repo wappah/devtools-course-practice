@@ -41,7 +41,7 @@ add_test(
     COMMAND ${APPLICATION} 1.0 2.0 3.0 1.0 2.0 3.0 L5
 )
 set_tests_properties (${prefix}_can_Detect_Wrong_Operation_Format PROPERTIES
-    PASS_REGULAR_EXPRESSION "Wrong operation format!"
+    PASS_REGULAR_EXPRESSION "Wrong operation name!"
     LABELS "${MODULE}")
 
 add_test(

@@ -50,7 +50,7 @@ Metrics* createMetrics(const std::string& operation,
                        const std::vector<float>& vectorB) {
   Metrics* metrics;
   try {
-    metrics = metricsFactory::create(operation, vectorA, vectorB);
+    return metrics = metricsFactory::create(operation, vectorA, vectorB);
   }
   catch (...) {
     throw std::string("Wrong operation name!");

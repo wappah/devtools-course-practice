@@ -10,7 +10,9 @@
 class metricsFactory {
  public:
   static Metrics* create(const std::string& _operation);
-  static Metrics* create(const std::string& _operation, const std::vector<float>& _fst, const std::vector<float>& _sec);
+  static Metrics* create(const std::string& _operation,
+                         const std::vector<float>& _fst,
+                         const std::vector<float>& _sec);
 };
 
 #endif  // MODULES_DISTANCE_BETWEEN_VECTORS_INCLUDE_METRICS_FACTORY_H_

@@ -12,11 +12,11 @@ class DistanceCalculator {
     std::string operator()(int argc, const char** argv);
 
  private:
-   using Arguments = struct {
-       std::vector<float> vectorA;
-       std::vector<float> vectorB;
-       std::string operation;
-   };
+    using Arguments = struct {
+        std::vector<float> vectorA;
+        std::vector<float> vectorB;
+        std::string operation;
+    };
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
