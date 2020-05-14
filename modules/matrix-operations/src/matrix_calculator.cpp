@@ -86,7 +86,8 @@ std::vector<double> MatrixCalculator::pushB(int argc,
 
   return res;
 }
-std::string MatrixCalculator::RunOperations(int argc, Arguments args, Matrix lhs, Matrix rhs) {
+std::string MatrixCalculator::RunOperations(int argc, Arguments args,
+  Matrix lhs, Matrix rhs) {
   Matrix resMatrix(2, 2);
   bool resBool;
   double resDouble;
@@ -108,8 +109,7 @@ std::string MatrixCalculator::RunOperations(int argc, Arguments args, Matrix lhs
     if (argc == 7) {
       resMatrix = lhs * scalar;
       stream << "res = ";
-    }
-    else {
+    } else {
       resMatrix = lhs * rhs;
       stream << "res = ";
     }
