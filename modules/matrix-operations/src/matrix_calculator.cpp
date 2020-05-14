@@ -38,17 +38,6 @@ bool MatrixCalculator::validateNumberOfArguments(int argc,
   return true;
 }
 
-double parseDouble(const char* arg) {
-  char* end;
-  double value = strtod(arg, &end);
-
-  if (end[0]) {
-    throw std::string("Wrong number format!");
-  }
-
-  return value;
-}
-
 char parseOperation(const char* arg) {
   char op;
   std::string lastArgument(arg);
@@ -78,10 +67,10 @@ std::vector<double> MatrixCalculator::pushA(int argc,
   const char** argv) {
   std::vector<double> res(4);
 
-  res[0] = parseDouble(argv[1]);
-  res[1] = parseDouble(argv[2]);
-  res[2] = parseDouble(argv[3]);
-  res[3] = parseDouble(argv[4]);
+  res[0] = std::stod(argv[1]);
+  res[1] = std::stod(argv[2]);
+  res[2] = std::stod(argv[3]);
+  res[3] = std::stod(argv[4]);
 
   return res;
 }
@@ -89,10 +78,10 @@ std::vector<double> MatrixCalculator::pushB(int argc,
   const char** argv) {
   std::vector<double> res(4);
 
-  res[0] = parseDouble(argv[5]);
-  res[1] = parseDouble(argv[6]);
-  res[2] = parseDouble(argv[7]);
-  res[3] = parseDouble(argv[8]);
+  res[0] = std::stod(argv[5]);
+  res[1] = std::stod(argv[6]);
+  res[2] = std::stod(argv[7]);
+  res[3] = std::stod(argv[8]);
 
   return res;
 }
@@ -109,7 +98,7 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
       args.b = pushB(argc, argv);
       args.operation = parseOperation(argv[9]);
     } else if (argc == 7) {
-      args.c = parseDouble(argv[5]);
+      args.c = std::stod(argv[5]);
       args.operation = parseOperation(argv[6]);
     } else {
       args.operation = parseOperation(argv[5]);

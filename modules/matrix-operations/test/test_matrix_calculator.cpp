@@ -48,14 +48,6 @@ TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
   Assert("Should be 5, 6 or 9 arguments!");
 }
 
-TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {
-  std::vector<std::string> args = { "1.0", "kryak", "3.0", "1.0", "T" };
-
-  Act(args);
-
-  Assert("Wrong number format!");
-}
-
 TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Operation_Format) {
   std::vector<std::string> args = { "1.0", "2.0", "3.0", "1.0",
     "2.0", "3.0", "2.0", "3.0", "+-" };
