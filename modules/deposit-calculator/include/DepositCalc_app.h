@@ -13,12 +13,14 @@ class DepositCalc_app {
  private:
     void help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
+    bool validateArguments(const char** argv);
     std::string message_;
-    typedef struct {
-      int depositAmount;
+
+    using Arguments = struct {
+      unsigned int depositAmount;
       unsigned int period;
-      int rate;
-    } Arguments;
+      unsigned int rate;
+    };
 };
 
 #endif  // MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_APP_H_

@@ -31,7 +31,10 @@ bool DepositCalc_app::validateNumberOfArguments(int argc, const char** argv) {
     help(argv[0], "ERROR: Should be 3 arguments.\n\n");
     return false;
   }
+  return true;
+}
 
+bool DepositCalc_app::validateArguments(const char** argv) {
   if (std::stoi(argv[2]) < 0) {
     help(argv[0], "ERROR: Period cant be negative.\n\n");
     return false;
@@ -55,6 +58,11 @@ std::string DepositCalc_app::operator()(int argc, const char** argv) {
   if (!validateNumberOfArguments(argc, argv)) {
     return message_;
   }
+
+  if (!validateArguments(argv)) {
+    return message_;
+  }
+
   try {
     args.depositAmount = stoi(argv[1]);
     args.period = stoi(argv[2]);
