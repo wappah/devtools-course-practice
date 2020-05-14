@@ -47,7 +47,12 @@ void Metrics::setBoth(const std::vector<float>& _fst,
     sec = _sec;
 }
 
-double Metrics::getL1() {
+double Metrics::getMetrics() const {
+  throw "Implimintation in child classes";
+  return 0.0;
+}
+
+double MetricsL1::getMetrics() const {
   double res = 0;
   for (std::size_t i = 0; i < fst.size(); ++i) {
     res += std::abs(fst[i] - sec[i]);
@@ -55,7 +60,7 @@ double Metrics::getL1() {
   return res;
 }
 
-double Metrics::getL2() {
+double MetricsL2::getMetrics() const {
   double res = 0;
   for (std::size_t i = 0; i < fst.size(); ++i) {
     res += (fst[i] - sec[i]) * (fst[i] - sec[i]);
@@ -63,7 +68,7 @@ double Metrics::getL2() {
   return std::sqrt(res);
 }
 
-double Metrics::getL3() {
+double MetricsL3::getMetrics() const {
   double res = 0;
   for (std::size_t i = 0; i < fst.size(); ++i) {
     res += std::pow(std::abs(fst[i] - sec[i]), 3);
@@ -71,7 +76,7 @@ double Metrics::getL3() {
   return std::pow(res, 1.0 / 3.0);
 }
 
-double Metrics::getL4() {
+double MetricsL4::getMetrics() const {
   double res = 0;
   for (std::size_t i = 0; i < fst.size(); ++i) {
     res += std::pow(fst[i] - sec[i], 4);
@@ -79,7 +84,7 @@ double Metrics::getL4() {
   return std::pow(res, 1.0 / 4.0);
 }
 
-double Metrics::getLInf() {
+double MetricsLInf::getMetrics() const {
   double res = std::abs(fst[0] - sec[0]);
   for (std::size_t i = 1; i < fst.size(); ++i) {
     double curElem = std::abs(fst[i] - sec[i]);

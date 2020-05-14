@@ -68,7 +68,7 @@ TEST_F(DistanceCalculatorTest, Can_Detect_Wrong_Operation_Format) {
 
     Act(args);
 
-    Assert("Wrong operation format!");
+    Assert("Wrong operation name!");
 }
 
 TEST_F(DistanceCalculatorTest, Can_Take_L1_Metrics) {

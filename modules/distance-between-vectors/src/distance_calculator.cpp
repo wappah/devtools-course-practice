@@ -6,6 +6,7 @@
 
 #include "include/distance_calculator.h"
 #include "include/distance_between_vectors.h"
+#include "include/metrics_factory.h"
 
 DistanceCalculator::DistanceCalculator() : message_("") {}
 
@@ -44,23 +45,16 @@ double parseDouble(const char* arg) {
     return value;
 }
 
-char parseOperation(const char* arg) {
-    char operation;
-    std::string notParsedOperation(arg);
-    if (notParsedOperation == "L1") {
-        operation = '1';
-    } else if (notParsedOperation == "L2") {
-        operation = '2';
-    } else if (notParsedOperation == "L3") {
-        operation = '3';
-    } else if (notParsedOperation == "L4") {
-        operation = '4';
-    } else if (notParsedOperation == "LInf") {
-        operation = 'I';
-    } else {
-        throw std::string("Wrong operation format!");
-    }
-    return operation;
+Metrics* createMetrics(const std::string& operation,
+                       const std::vector<float>& vectorA,
+                       const std::vector<float>& vectorB) {
+  Metrics* metrics;
+  try {
+    metrics = metricsFactory::create(operation, vectorA, vectorB);
+  }
+  catch (...) {
+    throw std::string("Wrong operation name!");
+  }
 }
 
 std::string DistanceCalculator::operator()(int argc, const char** argv) {
@@ -77,33 +71,25 @@ std::string DistanceCalculator::operator()(int argc, const char** argv) {
         args.vectorB[0] = parseDouble(argv[4]);
         args.vectorB[1] = parseDouble(argv[5]);
         args.vectorB[2] = parseDouble(argv[6]);
-        args.operation  = parseOperation(argv[7]);
+        args.operation  = std::string(argv[7]);
     }
     catch(std::string& str) {
         return str;
     }
 
-    std::ostringstream stream;
-    Metrics metrics(args.vectorA, args.vectorB);
+    Metrics* metrics;
 
-    switch (args.operation) {
-     case '1':
-        stream << "L1 = " << metrics.getL1();
-        break;
-     case '2':
-        stream << "L2 = " << metrics.getL2();
-        break;
-     case '3':
-        stream << "L3 = " << metrics.getL3();
-        break;
-     case '4':
-         stream << "L4 = " << metrics.getL4();
-         break;
-     case 'I':
-         stream << "LInf = " << metrics.getLInf();
-         break;
+    try {
+        metrics = createMetrics(args.operation,
+                                args.vectorA,
+                                args.vectorB);
     }
-
+    catch (std::string& str) {
+        return str;
+    }
+    std::ostringstream stream;
+    stream << args.operation << " = " << metrics->getMetrics();
+    delete metrics;
     message_ = stream.str();
     return message_;
 }

@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include "include/distance_between_vectors.h"
+#include "include/metrics_factory.h"
 
 class DistanceBetweenVectorsTest : public ::testing::Test {
  protected:
@@ -135,7 +136,7 @@ TEST_F(DistanceBetweenVectorsTest, cannot_set_sec_vec_of_another_div) {
   ASSERT_ANY_THROW(metrics.setSecond(newSecond));
 }
 
-TEST_F(DistanceBetweenVectorsTest, cannot_set_both_vec) {
+TEST_F(DistanceBetweenVectorsTest, cant_set_both_vec) {
     // Arrange
     std::vector<float> first{ 1.0, 2.0, 3.0 };
     std::vector<float> second{ 2.0, 3.0, 4.0 };
@@ -147,154 +148,188 @@ TEST_F(DistanceBetweenVectorsTest, cannot_set_both_vec) {
     ASSERT_ANY_THROW(metrics.setBoth(newFirst, newSecond));
 }
 
-TEST_F(DistanceBetweenVectorsTest, can_return_l1_metric_1) {
+TEST_F(DistanceBetweenVectorsTest, get_metrix_exeption_in_base_class) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
   Metrics metrics(first, second);
+  // Act & Assert
+  EXPECT_ANY_THROW(metrics.getMetrics());
+}
+
+TEST_F(DistanceBetweenVectorsTest, can_return_l1_metric_1) {
+  // Arrange
+  std::vector<float> first{ 1.0, 2.0, 3.0 };
+  std::vector<float> second{ 2.0, 3.0, 4.0 };
+  Metrics* metrics = metricsFactory::create("L1", first, second);
   double expectedRes = 3.0;
 
   // Act
-  double res = metrics.getL1();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(3.0, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l1_metric_2) {
   // Arrange
-  Metrics metrics;
+  Metrics* metrics = metricsFactory::create("L1");
   double expectedRes = 0.0;
 
   // Act
-  double res = metrics.getL1();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(res, expectedRes, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l2_metric_1) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L2", first, second);
   double expectedRes = std::sqrt(3);
 
   // Act
-  double res = metrics.getL2();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l2_metric_2) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L2", first, second);
   double expectedRes = std::sqrt(14);
 
   // Act
-  double res = metrics.getL2();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l3_metric_1) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L3", first, second);
   double expectedRes = std::pow(36, 1.0 / 3.0);
 
   // Act
-  double res = metrics.getL3();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l3_metric_2) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L3", first, second);
   double expectedRes = std::pow(3, 1.0 / 3.0);
 
   // Act
-  double res = metrics.getL3();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l4_metric_1) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L4", first, second);
   double expectedRes = std::pow(98, 1.0 / 4.0);
 
   // Act
-  double res = metrics.getL4();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l4_metric_2) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L4", first, second);
   double expectedRes = std::pow(3, 1.0 / 4.0);
 
   // Act
-  double res = metrics.getL4();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l_inf_metric_1) {
   // Arrange
   std::vector<float> first{ 3.0, 1.0, 1.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("LInf", first, second);
   double expectedRes = 3;
 
   // Act
-  double res = metrics.getLInf();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, can_return_l_inf_metric_2) {
   // Arrange
   std::vector<float> first{ 1.0, 2.0, 3.0 };
   std::vector<float> second{ 2.0, 3.0, 4.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("LInf", first, second);
   double expectedRes = 1;
 
   // Act
-  double res = metrics.getLInf();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
 }
 
 TEST_F(DistanceBetweenVectorsTest, test) {
   // Arrange
   std::vector<float> first{ -1.359, 2.579, 2.498 };
   std::vector<float> second{ 2.578, 1.0, 3.0 };
-  Metrics metrics(first, second);
+  Metrics* metrics = metricsFactory::create("L2", first, second);
   double expectedRes = 4.271441676998529;
 
   // Act
-  double res = metrics.getL2();
+  double res = metrics->getMetrics();
 
   // Assert
   EXPECT_NEAR(expectedRes, res, DistanceBetweenVectorsTest::epsilon);
+  delete metrics;
+}
+
+TEST_F(DistanceBetweenVectorsTest, factory_cant_recognize_operation_without_args) {
+  // Arrange & Act & Assert
+  EXPECT_ANY_THROW(metricsFactory::create("L666"););
+}
+
+TEST_F(DistanceBetweenVectorsTest, factory_cant_recognize_operation_whith_args) {
+  // Arrange
+  std::vector<float> first{ 1.0, 2.0, 3.0 };
+  std::vector<float> second{ 2.0, 3.0, 4.0 };
+
+  // Act & Assert
+  EXPECT_ANY_THROW(metricsFactory::create("L666", first, second););
 }
