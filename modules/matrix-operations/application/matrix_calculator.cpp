@@ -1,14 +1,13 @@
 // Copyright 2020 Golubev Vladislav
 
-#include <stdlib.h>
-#include <stdio.h>
 #include <string>
+#include <iostream>
 
 #include "include/matrix_calculator.h"
 
 int main(int argc, const char** argv) {
     MatrixCalculator app;
     std::string output = app(argc, argv);
-    printf("%s\n", output.c_str());
+    std::cout << output.c_str() << std::endl;
     return 0;
 }
