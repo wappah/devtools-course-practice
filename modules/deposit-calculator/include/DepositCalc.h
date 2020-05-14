@@ -11,7 +11,8 @@ class DepositCalc {
     unsigned int depositWithRate;
     unsigned int interestCharges;
  public:
-    DepositCalc(const unsigned int& _depositAmount = 1000, const unsigned int& _period = 1, const unsigned int& _rate = 1);
+    DepositCalc(const unsigned int& _depositAmount = 1000,
+      const unsigned int& _period = 1, const unsigned int& _rate = 1);
     void calc();
     void setDepositAmount(const unsigned int& depositAmount);
     void setPeriod(const unsigned int& period);
