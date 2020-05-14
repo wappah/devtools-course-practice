@@ -16,6 +16,8 @@ Metrics::Metrics(const std::vector<float>& _fst,
     sec = _sec;
 }
 
+Metrics::~Metrics() {}
+
 std::vector<float> Metrics::getFirst() const {
     return fst;
 }
