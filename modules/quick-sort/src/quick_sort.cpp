@@ -1,7 +1,7 @@
 // Copyright 2020 Golovanova Elena
 
 #include "include/quick_sort.h"
-
+#include <algorithm>
 #include <vector>
 
 QuickSort::QuickSort(std::vector<int> _vector) : vector(_vector) {}
