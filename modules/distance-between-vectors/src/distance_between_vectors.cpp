@@ -9,7 +9,7 @@ Metrics::Metrics() : fst(std::vector<float>(1)),
 
 Metrics::Metrics(const std::vector<float>& _fst,
                  const std::vector<float>& _sec) {
-    if(_fst.size() != _sec.size()) {
+    if (_fst.size() != _sec.size()) {
         throw "vectors of different dimensions";
     }
     fst = _fst;
@@ -39,12 +39,12 @@ void Metrics::setSecond(const std::vector<float>& _sec) {
 }
 
 void Metrics::setBoth(const std::vector<float>& _fst,
-					  const std::vector<float>& _sec) {
-	if (_fst.size() != _sec.size()) {
-		throw "both new vectors of different dimensions";
-	}
-	fst = _fst;
-	sec = _sec;
+                      const std::vector<float>& _sec) {
+    if (_fst.size() != _sec.size()) {
+        throw "both new vectors of different dimensions";
+    }
+    fst = _fst;
+    sec = _sec;
 }
 
 double L1::getMetrics() const {
