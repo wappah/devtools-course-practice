@@ -40,7 +40,7 @@ class L2 : public Metrics {
     L2() : Metrics() {}
     L2(const std::vector<float>& _fst,
        const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~L2() {};
+    ~L2() = default;
     double getMetrics() const final;
 };
 
@@ -49,7 +49,7 @@ class L3 : public Metrics {
     L3() : Metrics() {}
     L3(const std::vector<float>& _fst,
        const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
-    ~L3() {};
+    ~L3() = default;
     double getMetrics() const final;
 };
 
