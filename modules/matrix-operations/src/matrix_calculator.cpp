@@ -25,6 +25,7 @@ void MatrixCalculator::help(const char* appname, const char* message) {
     "Where matrix elements are double-precision numbers, " +
     "and <operation> is one of '+', '-', '*', '=='. '!=' " +
     "'det', 'T', 'inv'.\n" +
+
     "If you want to perform an operation only for the " +
     "first matrix, you don't need to specify the second one.\n";
 }
@@ -35,7 +36,7 @@ bool MatrixCalculator::validateNumberOfArguments(int argc,
     help(argv[0]);
     return false;
   } else if (argc != 10 && argc != 7 && argc != 6) {
-    help(argv[0], "Should be 9 or 6 or 5 arguments!\n\n");
+    help(argv[0], "Should be 5, 6 or 9 arguments!\n\n");
     return false;
   }
   return true;

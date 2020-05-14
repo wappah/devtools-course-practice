@@ -45,7 +45,7 @@ TEST_F(MatrixCalculatorTest, Is_Checking_Number_Of_Arguments) {
 
   Act(args);
 
-  Assert("Should be 9 or 6 or 5 arguments!");
+  Assert("Should be 5, 6 or 9 arguments!");
 }
 
 TEST_F(MatrixCalculatorTest, Can_Detect_Wrong_Number_Format) {

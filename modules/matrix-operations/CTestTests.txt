@@ -24,7 +24,7 @@ add_test(
     COMMAND ${APPLICATION} 1.0 2.0 3.0 *
 )
 set_tests_properties (${prefix}_Is_Checking_Number_Of_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "Should be 9 or 6 or 5 arguments!"
+    PASS_REGULAR_EXPRESSION "Should be 5, 6 or 9 arguments!"
     LABELS "${MODULE}")
 
 add_test(
