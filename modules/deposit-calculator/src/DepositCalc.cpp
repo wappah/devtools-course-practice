@@ -52,7 +52,7 @@ void DepositCalc::setRate(const unsigned int& rate) {
 void DepositCalc::calc() {
   double period_in_years = static_cast<double>(period) / 366;
   double interest_rate = static_cast<double>(rate) / 100;
-  depositWithRate = depositAmount +
-    depositAmount * period_in_years * interest_rate;
+  depositWithRate = static_cast<unsigned int>(depositAmount +
+    depositAmount * period_in_years * interest_rate);
     interestCharges = depositWithRate - depositAmount;
 }
