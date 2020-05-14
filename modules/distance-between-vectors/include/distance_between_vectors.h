@@ -55,7 +55,7 @@ class MetricsL3 : public Metrics {
 };
 
 class MetricsL4 : public Metrics {
-public:
+ public:
     MetricsL4() : Metrics() {}
     MetricsL4(const std::vector<float>& _fst,
               const std::vector<float>& _sec) : Metrics(_fst, _sec) {}
