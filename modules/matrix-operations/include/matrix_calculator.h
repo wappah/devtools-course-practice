@@ -16,12 +16,12 @@ class MatrixCalculator {
   std::vector<double> pushA(int argc, const char** argv);
   std::vector<double> pushB(int argc, const char** argv);
   std::string message_;
-  typedef struct {
+  using Arguments = struct {
     std::vector<double> a;
     std::vector<double> b;
     double c;
     char operation;
-  } Arguments;
+  };
 };
 
 #endif  // MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_CALCULATOR_H_
