@@ -1,25 +1,29 @@
-// Copyright 2020 Mikhail Zakharov
+// Copyright 2020 Mikhail Zakharov & Kornev Nikita
 
 #ifndef MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_H_
 #define MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_H_
-extern const unsigned int max_period_days;
+
 class DepositCalc {
-    int depositAmount;
+    unsigned int depositAmount;
     unsigned int period;
-    int rate;
-    int depositWithRate;
-    int interestCharges;
+    unsigned int rate;
+    unsigned int depositWithRate;
+    unsigned int interestCharges;
+
+    const unsigned int maxPeriodDays = 1826;
  public:
-     DepositCalc(int _depositAmount, int _period, int _rate);
-     void calc();
-     void setDepositAmount(const int& depositAmount);
-     void setPeriod(unsigned const int& period);
-     void setRate(const int& rate);
-     int getDepositAmount() const;
-     int getPeriod() const;
-     int getRate() const;
-     int getDepositWithRate() const;
-     int getInterestCharges() const;
+    DepositCalc(unsigned const int _depositAmount = 1000,
+      unsigned const int _period = 1, unsigned const int _rate = 1);
+    void calc();
+    void setDepositAmount(unsigned const int depositAmount);
+    void setPeriod(unsigned const int period);
+    void setRate(unsigned const int rate);
+    unsigned int getDepositAmount() const;
+    unsigned int getPeriod() const;
+    unsigned int getRate() const;
+    unsigned int getDepositWithRate() const;
+    unsigned int getInterestCharges() const;
+    unsigned int getMaxPeriodDays() const;
 };
 
 #endif  // MODULES_DEPOSIT_CALCULATOR_INCLUDE_DEPOSITCALC_H_
