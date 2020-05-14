@@ -62,7 +62,9 @@ std::string DistanceCalculator::operator()(int argc, const char** argv) {
         args.vectorB[2] = parseDouble(argv[6]);
         args.operation  = std::string(argv[7]);
 
-        metrics = MetricsFactory::create(args.operation, args.vectorA, args.vectorB);
+        metrics = MetricsFactory::create(args.operation,
+                                         args.vectorA,
+                                         args.vectorB);
     } catch (std::string& str) {
         return str;
     }
