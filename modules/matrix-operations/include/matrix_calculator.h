@@ -4,7 +4,7 @@
 
 #include <string>
 #include <vector>
-#include "matrix_operations.h"
+#include "include/matrix_operations.h"
 
 class MatrixCalculator {
  public:
