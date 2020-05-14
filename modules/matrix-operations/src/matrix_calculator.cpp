@@ -51,21 +51,22 @@ double parseDouble(const char* arg) {
 
 char parseOperation(const char* arg) {
   char op;
-  if (strcmp(arg, "+") == 0) {
+  std::string lastArgument(arg);
+  if (lastArgument == "+") {
     op = '1';
-  } else if (strcmp(arg, "-") == 0) {
+  } else if (lastArgument == "-") {
     op = '2';
-  } else if (strcmp(arg, "*") == 0) {
+  } else if (lastArgument == "*") {
     op = '3';
-  } else if (strcmp(arg, "==") == 0) {
+  } else if (lastArgument == "==") {
     op = '5';
-  } else if (strcmp(arg, "!=") == 0) {
+  } else if (lastArgument == "!=") {
     op = '6';
-  } else if (strcmp(arg, "det") == 0) {
+  } else if (lastArgument == "det") {
     op = '7';
-  } else if (strcmp(arg, "T") == 0) {
+  } else if (lastArgument == "T") {
     op = '8';
-  } else if (strcmp(arg, "inv") == 0) {
+  } else if (lastArgument == "inv") {
     op = '9';
   } else {
     throw std::string("Wrong operation format!");
