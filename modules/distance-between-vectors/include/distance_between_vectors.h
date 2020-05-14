@@ -13,7 +13,7 @@ class Metrics {
     Metrics();
     Metrics(const std::vector<float>& _fst,
             const std::vector<float>& _sec);
-    virtual ~Metrics() {}
+    virtual ~Metrics() = 0;
 
     std::vector<float> getFirst() const;
     std::vector<float> getSecond() const;
