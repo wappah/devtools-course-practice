@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include "matrix_operations.h"
 
 class MatrixCalculator {
  public:
@@ -22,6 +23,7 @@ class MatrixCalculator {
     double c;
     char operation;
   };
+  std::string RunOperations(int argc, Arguments args, Matrix lhs, Matrix rhs);
 };
 
 #endif  // MODULES_MATRIX_OPERATIONS_INCLUDE_MATRIX_CALCULATOR_H_

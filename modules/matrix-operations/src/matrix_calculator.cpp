@@ -86,37 +86,7 @@ std::vector<double> MatrixCalculator::pushB(int argc,
 
   return res;
 }
-
-std::string MatrixCalculator::operator()(int argc, const char** argv) {
-  Arguments args;
-
-  if (!validateNumberOfArguments(argc, argv)) {
-    return message_;
-  }
-  try {
-    args.a = pushA(argc, argv);
-    switch (argc) {
-    case 10:
-      args.b = pushB(argc, argv);
-      args.operation = parseOperation(argv[9]);
-      break;
-    case 7:
-      args.c = std::stod(argv[5]);
-      args.operation = parseOperation(argv[6]);
-      break;
-    default:
-      args.operation = parseOperation(argv[5]);
-    }
-  }
-  catch (std::string & str) {
-    return str;
-  }
-
-  Matrix lhs(2, 2, args.a);
-  Matrix rhs(2, 2);
-  if (argc == 10) {
-    rhs = Matrix(2, 2, args.b);
-  }
+std::string MatrixCalculator::RunOperations(int argc, Arguments args, Matrix lhs, Matrix rhs) {
   Matrix resMatrix(2, 2);
   bool resBool;
   double resDouble;
@@ -138,7 +108,8 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
     if (argc == 7) {
       resMatrix = lhs * scalar;
       stream << "res = ";
-    } else {
+    }
+    else {
       resMatrix = lhs * rhs;
       stream << "res = ";
     }
@@ -173,4 +144,38 @@ std::string MatrixCalculator::operator()(int argc, const char** argv) {
 
   message_ = stream.str();
   return message_;
+}
+
+std::string MatrixCalculator::operator()(int argc, const char** argv) {
+  Arguments args;
+
+  if (!validateNumberOfArguments(argc, argv)) {
+    return message_;
+  }
+  try {
+    args.a = pushA(argc, argv);
+    switch (argc) {
+    case 10:
+      args.b = pushB(argc, argv);
+      args.operation = parseOperation(argv[9]);
+      break;
+    case 7:
+      args.c = std::stod(argv[5]);
+      args.operation = parseOperation(argv[6]);
+      break;
+    default:
+      args.operation = parseOperation(argv[5]);
+    }
+  }
+  catch (std::string & str) {
+    return str;
+  }
+
+  Matrix lhs(2, 2, args.a);
+  Matrix rhs(2, 2);
+  if (argc == 10) {
+    rhs = Matrix(2, 2, args.b);
+  }
+
+  return RunOperations(argc, args, lhs, rhs);
 }
