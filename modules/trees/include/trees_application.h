@@ -6,17 +6,16 @@
 #include "include/trees.h"
 
 class TreesApplication {
-public:
+ public:
   TreesApplication() = default;
   std::string operator()(int argc, const char** argv);
 
-private:
+ private:
   std::string Help(const char* appname);
   int ParseOperation(const char** argv);
   int ParseValue(const char* s);
   Tree tree_;
   std::stringstream _sstream;
-
 };
 
 #endif  // MODULES_TREES_INCLUDE_TREES_APPLICATION_H_
