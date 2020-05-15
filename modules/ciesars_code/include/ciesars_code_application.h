@@ -7,6 +7,8 @@
 
 class CiesarsCodeApplication {
  private:
+  std::string errormes;
+  bool checkArgs(int _argc, const char** _argv);
   bool readFile(std::string in_filename);
   bool writeFile(std::string out_filename);
   std::string filetext_;

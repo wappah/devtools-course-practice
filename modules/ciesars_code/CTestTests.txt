@@ -17,7 +17,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_Can_Print_Help_Without_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "\nThis application encodes/decodes the contents of the file.\n"
+    PASS_REGULAR_EXPRESSION "\nInvalid count of params."
     LABELS "${MODULE}")
 
 add_test(
@@ -26,7 +26,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_Throws_On_Invalid_FileName PROPERTIES
-    PASS_REGULAR_EXPRESSION "\nThis application encodes/decodes the contents of the file.\n"
+    PASS_REGULAR_EXPRESSION "\nCan't open input file."
     LABELS "${MODULE}")
 
 add_test(
@@ -35,7 +35,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_Throws_On_Invalid_Operation PROPERTIES
-    PASS_REGULAR_EXPRESSION "\nThis application encodes/decodes the contents of the file.\n"
+    PASS_REGULAR_EXPRESSION "\nInvalid Operator."
     LABELS "${MODULE}")
 
 add_test(
