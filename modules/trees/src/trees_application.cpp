@@ -61,9 +61,9 @@ int TreesApplication::ParseOperation(const char** argv) {
   if (std::strcmp(*argv, "search") == 0) {
     int value = ParseValue(*(argv + 1));
     bool verdict = tree_.FindElemData(value);
-    if (verdict) {
+    if (verdict)
       _sstream << value << " is found.";
-    } else
+    else
       _sstream << value << " is not found.";
     return 2;
   }
