@@ -93,10 +93,8 @@ bool CiesarsCodeApplication::checkArgs(int _argc, const char** _argv) {
   std::string _operation = "";
 
   if (_argc > 4) {
-    int _key = 0;
     _in_filename = _argv[1];
     _out_filename = _argv[2];
-    _key = std::atoi(_argv[3]);
     _operation = _argv[4];
 
     std::ifstream _in_file(_in_filename);
