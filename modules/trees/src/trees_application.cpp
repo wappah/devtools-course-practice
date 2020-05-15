@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <limits>
 #include "include/trees_application.h"
 
 std::string TreesApplication::Help(const char* appname) {
@@ -49,7 +50,6 @@ int TreesApplication::ParseValue(const char* s) {
 int TreesApplication::ParseOperation(const char** argv) {
   if (std::strcmp(*argv, "add") == 0) {
     int value = ParseValue(*(argv + 1));
-    //std::cout << value << std::endl;
     tree_.AddElem(value);
     return 2;
   }
@@ -63,8 +63,7 @@ int TreesApplication::ParseOperation(const char** argv) {
     bool verdict = tree_.FindElemData(value);
     if (verdict) {
       _sstream << value << " is found.";
-    }
-    else
+    } else
       _sstream << value << " is not found.";
     return 2;
   }
