@@ -27,7 +27,7 @@ std::string TreesApplication::operator()(int argc, const char** argv) {
     }
     return _sstream.str();
   }
-  catch (std::runtime_error & re) {
+  catch (std::runtime_error &re) {
     return re.what();
   }
 }
