@@ -83,3 +83,30 @@ add_test(
 set_tests_properties (${prefix}_cant_Insert_Out_Of_Range_Elem PROPERTIES
     PASS_REGULAR_EXPRESSION "(Out of range)"
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_cant_Insert_Out_Of_Range_Negative_Elem
+    COMMAND ${APPLICATION} insert 1 -12000000000000
+)
+
+set_tests_properties (${prefix}_cant_Insert_Out_Of_Range_Negative_Elem PROPERTIES
+    PASS_REGULAR_EXPRESSION "(Out of range)"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_cant_Insert_Trash
+    COMMAND ${APPLICATION} insert dasad1asda afw2edw
+)
+
+set_tests_properties (${prefix}_cant_Insert_Trash PROPERTIES
+    PASS_REGULAR_EXPRESSION "Invalid value: afw2edw"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_cant_Remove_Trash
+    COMMAND ${APPLICATION} insert 2 5 remove daw1fa124asw
+)
+
+set_tests_properties (${prefix}_cant_Remove_Trash PROPERTIES
+    PASS_REGULAR_EXPRESSION "(Invalid value: daw1fa124asw)"
+    LABELS "${MODULE}")

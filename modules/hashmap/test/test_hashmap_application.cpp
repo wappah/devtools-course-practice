@@ -97,3 +97,28 @@ TEST_F(HashmapAppTest, Cant_Insert_Out_Of_Range_Elem) {
 
     Assert("\\(Out of range\\)");
 }
+
+TEST_F(HashmapAppTest, Cant_Insert_Out_Of_Range_Negative_Elem) {
+    std::vector<std::string> args = {"insert", "1", "-12000000000000"};
+
+    Act(args);
+
+    Assert("\\(Out of range\\)");
+}
+
+TEST_F(HashmapAppTest, Cant_Insert_Trash) {
+    std::vector<std::string> args = {"insert", "dasad1asda", "afw2edw"};
+
+    Act(args);
+
+    Assert("Invalid value: afw2edw");
+}
+
+TEST_F(HashmapAppTest, Cant_Remove_Trash) {
+    std::vector<std::string> args = {"insert", "2", "5", "remove",
+        "daw1fa124asw"};
+
+    Act(args);
+
+    Assert("\\(Invalid value: daw1fa124asw\\)");
+}
