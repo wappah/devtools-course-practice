@@ -5,7 +5,7 @@
 #include <iostream>
 #include <limits>
 #include <stdexcept>
-#include <string.h>
+#include <cstring>
 #include "include/trees_application.h"
 
 std::string TreesApplication::Help(const char* appname) {
