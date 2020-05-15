@@ -12,7 +12,8 @@ class TreesApplicationTest : public ::testing::Test {
         std::vector<const char*> options;
 
         options.push_back("appname");
-        for (size_t i = 0; i < args_.size(); ++i) {
+        int s = args_.size();
+        for (int i = 0; i < s; ++i) {
             options.push_back(args_[i].c_str());
         }
 
