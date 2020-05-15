@@ -2,6 +2,7 @@
 
 #include "include/ciesars_code_application.h"
 #include <string>
+#include <fstream>
 
 std::string CiesarsCodeApplication::operator()(int argc, const char** argv) {
   std::string result = "";
@@ -13,7 +14,7 @@ std::string CiesarsCodeApplication::operator()(int argc, const char** argv) {
     int key = 0;
     in_filename = argv[1];
     out_filename = argv[2];
-    key = atoi(argv[3]);
+    key = std::atoi(argv[3]);
     operation = argv[4];
 
     if (operation == "EN") {
@@ -85,8 +86,13 @@ bool CiesarsCodeApplication::readFile(std::string in_filename) {
   return true;
 }
 
-void CiesarsCodeApplication::writeFile(std::string out_filename) {
+bool CiesarsCodeApplication::writeFile(std::string out_filename) {
   std::ofstream out_file(out_filename);
-  out_file << filetext_;
-  out_file.close();
+  if (!out_file.is_open()) {
+    return false;
+  } else {
+    out_file << filetext_;
+    out_file.close();
+  }
+  return true;
 }

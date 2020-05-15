@@ -2,7 +2,7 @@
 #include <string>
 #include "include/ciesars_code.h"
 
-std::string CiesarsCode::shift(const std::string& message, const int &key) {
+std::string CiesarsCode::shift(const std::string& message, const int key) {
   std::string shifted_message(message);
   int usedkey = key;
   if (usedkey < 0)
@@ -17,14 +17,13 @@ std::string CiesarsCode::shift(const std::string& message, const int &key) {
        % litCount + 'a';
     }
   }
-
   return shifted_message;
 }
 
-std::string CiesarsCode::encode(const std::string& message, const int &key) {
+std::string CiesarsCode::encode(const std::string& message, const int key) {
   return shift(message, key % litCount);
 }
 
-std::string CiesarsCode::decode(const std::string &message, const int &key) {
+std::string CiesarsCode::decode(const std::string &message, const int key) {
   return shift(message, (-key) % litCount);
 }
