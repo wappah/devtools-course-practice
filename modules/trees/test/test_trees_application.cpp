@@ -1,4 +1,4 @@
-// Copyright 2019 Sinitsina Maria
+// Copyright 2020 Sinitsina Maria
 #include <gtest/gtest.h>
 #include <string>
 #include <vector>

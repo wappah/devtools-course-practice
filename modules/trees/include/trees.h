@@ -1,4 +1,4 @@
-// Copyright 2020 Yasakova Anastasia
+// Copyright 2020 Yasakova Anastasia & Sinitsina Maria
 
 #ifndef MODULES_TREES_INCLUDE_TREES_H_
 #define MODULES_TREES_INCLUDE_TREES_H_

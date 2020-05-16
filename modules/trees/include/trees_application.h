@@ -1,4 +1,4 @@
-// Copyright 2019 Sinitsina Maria
+// Copyright 2020 Sinitsina Maria
 #ifndef MODULES_TREES_INCLUDE_TREES_APPLICATION_H_
 #define MODULES_TREES_INCLUDE_TREES_APPLICATION_H_
 #include <sstream>

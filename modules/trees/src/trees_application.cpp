@@ -1,4 +1,4 @@
-// Copyright 2019 Sinitsina Maria
+// Copyright 2020 Sinitsina Maria
 #include <vector>
 #include <string>
 #include <sstream>
