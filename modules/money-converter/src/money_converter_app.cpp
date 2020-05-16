@@ -82,7 +82,7 @@ std::string parseOperation(const char* arg) {
     } else {
         throw std::string("Wrong operation format!");
     }
-   return op;
+    return op;
 }
 
 std::string MoneyCalculator::operator()(int argc, const char** argv) {
