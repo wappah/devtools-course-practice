@@ -36,8 +36,7 @@ bool MoneyCalculator::ValidateNumberOfArgs(int argc, const char** argv) {
     if (argc == 1) {
         Help(argv[0]);
         return false;
-    }
-    else if (argc != 4) {
+    } else if (argc != 4) {
         Help(argv[0], "ERROR: Should be 3 arguments.\n");
         return false;
     }
@@ -72,20 +71,15 @@ std::string parseOperation(const char* arg) {
     std::string op;
     if (strcmp(arg, "usd") == 0) {
         op = "usd";
-    }
-    else if (strcmp(arg, "eur") == 0) {
+    } else if (strcmp(arg, "eur") == 0) {
         op = "eur";
-    }
-    else if (strcmp(arg, "jpy") == 0) {
+    } else if (strcmp(arg, "jpy") == 0) {
         op = "jpy";
-    }
-    else if (strcmp(arg, "sek") == 0) {
+    } else if (strcmp(arg, "sek") == 0) {
         op = "sek";
-    }
-    else if (strcmp(arg, "uah") == 0) {
+    } else if (strcmp(arg, "uah") == 0) {
         op = "uah";
-    }
-    else {
+    } else {
         throw std::string("Wrong operation format!");
     }
    return op;
@@ -111,20 +105,16 @@ std::string MoneyCalculator::operator()(int argc, const char** argv) {
     if (args.operation == "usd") {
         stream << "usd-rub converter: " <<
             MoneyConverter::rubUSD(args.value, args.side);
-    }
-    else if (args.operation == "eur") {
+    } else if (args.operation == "eur") {
         stream << "eur-rub converter: " <<
             MoneyConverter::rubEUR(args.value, args.side);
-    }
-    else if (args.operation == "jpy") {
+    } else if (args.operation == "jpy") {
         stream << "jpy-rub converter: " <<
             MoneyConverter::rubJPY(args.value, args.side);
-    }
-    else if (args.operation == "sek") {
+    } else if (args.operation == "sek") {
         stream << "sek-rub converter: " <<
             MoneyConverter::rubSEK(args.value, args.side);
-    }
-    else if (args.operation == "uah") {
+    } else if (args.operation == "uah") {
         stream << "uah-rub converter: " <<
             MoneyConverter::rubUAH(args.value, args.side);
     }
