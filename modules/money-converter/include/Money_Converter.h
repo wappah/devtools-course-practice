@@ -10,7 +10,7 @@ extern const double sekRate;
 extern const double uahRate;
 
 class MoneyConverter {
-  public:
+ public:
      static double rubUSD(const double& curr, bool whichone);
      static double rubEUR(const double& curr, bool whichone);
      static double rubJPY(const double& curr, bool whichone);
