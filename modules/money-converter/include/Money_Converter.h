@@ -10,12 +10,12 @@ extern const double sekRate;
 extern const double uahRate;
 
 class MoneyConverter {
- public:
-     double rubUSD(const double& curr, bool whichone);
-     double rubEUR(const double& curr, bool whichone);
-     double rubJPY(const double& curr, bool whichone);
-     double rubSEK(const double& curr, bool whichone);
-     double rubUAH(const double& curr, bool whichone);
+  public:
+     static double rubUSD(const double& curr, bool whichone);
+     static double rubEUR(const double& curr, bool whichone);
+     static double rubJPY(const double& curr, bool whichone);
+     static double rubSEK(const double& curr, bool whichone);
+     static double rubUAH(const double& curr, bool whichone);
 };
 
 #endif  // MODULES_MONEY_CONVERTER_INCLUDE_MONEY_CONVERTER_H_
