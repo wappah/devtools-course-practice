@@ -154,7 +154,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_sek_to_rub PROPERTIES
-    PASS_REGULAR_EXPRESSION "sek-rub converter: 52.16"
+    PASS_REGULAR_EXPRESSION "sek-rub converter: 52.15"
     LABELS "${MODULE}")
 	
 add_test(
@@ -174,7 +174,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_rub_to_uah PROPERTIES
-    PASS_REGULAR_EXPRESSION "uah-rub converter: 21.74"
+    PASS_REGULAR_EXPRESSION "uah-rub converter: 21.5054"
     LABELS "${MODULE}")
 
 
@@ -184,7 +184,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_uah_to_rub PROPERTIES
-    PASS_REGULAR_EXPRESSION "uah-rub converter: 110.38"
+    PASS_REGULAR_EXPRESSION "uah-rub converter: 111.6"
     LABELS "${MODULE}")
 	
 add_test(
