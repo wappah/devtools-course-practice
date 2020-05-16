@@ -58,7 +58,7 @@ add_test(
     COMMAND ${APPLICATION} 50.0 usd 0
 )
 
-set_tests_properties (${prefix}_Meter_to_Kilometer PROPERTIES
+set_tests_properties (${prefix}_rub_to_usd PROPERTIES
     PASS_REGULAR_EXPRESSION "usd-rub converter: 0.643"
     LABELS "${MODULE}")
 	
