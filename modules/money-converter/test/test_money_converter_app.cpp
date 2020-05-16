@@ -15,7 +15,7 @@ using std::vector;
 using std::string;
 
 class MoneyCalculatorTest : public ::testing::Test {
-  protected:
+ protected:
     void Act(vector<string> args_) {
         vector<const char*> options;
 
@@ -34,7 +34,7 @@ class MoneyCalculatorTest : public ::testing::Test {
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 
-  private:
+ private:
     MoneyCalculator app_;
     string output_;
 };
