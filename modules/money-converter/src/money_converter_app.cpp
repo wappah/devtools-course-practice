@@ -1,6 +1,5 @@
 // Copyright 2020 Sokova_Anastasia
 
-#include "include/Money_Converter.h"
 #include "include/money_converter_app.h"
 
 #include <stdio.h>
@@ -9,6 +8,7 @@
 #include <string.h>
 #include <string>
 #include <sstream>
+#include "include/Money_Converter.h"
 
 void MoneyCalculator::Help(const char* appname, const char* message) {
     message_ =
