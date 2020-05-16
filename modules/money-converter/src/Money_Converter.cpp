@@ -4,8 +4,8 @@
 
 const double dollarRate = 77.73;
 const double eurRate = 85.73;
-const double jpyRate = 71.40;
-const double sekRate = 78;
+const double jpyRate = 0.69;
+const double sekRate = 7.45;
 const double uahRate = 2.79;
 
 double MoneyConverter::rubUSD(const double& curr, bool  whichone) {
