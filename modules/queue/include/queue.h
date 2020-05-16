@@ -1,4 +1,4 @@
-// Copyright 2020 Sinitsina Maria
+// Copyright 2020 Sinitsina Maria & Yasakova Anastasia
 
 #ifndef MODULES_QUEUE_INCLUDE_QUEUE_H_
 #define MODULES_QUEUE_INCLUDE_QUEUE_H_
@@ -20,6 +20,8 @@ class Queue {
     explicit Queue(int s = 10);
     Queue(const Queue &q);
 
+    bool IsEmpty() const;
+    bool IsFull() const;
     void Put(int val);
     int Get();
     int TopElem() const;

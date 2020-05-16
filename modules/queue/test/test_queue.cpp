@@ -29,6 +29,24 @@ TEST(Queue, Can_Put_Element) {
     EXPECT_NO_THROW(q.Put(1));
 }
 
+TEST(Queue, Queue_Is_Empty) {
+    // Arrange
+    Queue q(5);
+
+    // Act & Assert
+    ASSERT_TRUE(q.IsEmpty());
+}
+
+TEST(Queue, Queue_Is_Full) {
+    // Arrange
+    Queue q(2);
+    q.Put(1);
+    q.Put(1);
+
+    // Act & Assert
+    ASSERT_TRUE(q.IsFull());
+}
+
 TEST(Queue, Cant_Put_Element_In_Full) {
     // Arrange
     Queue q(3);
