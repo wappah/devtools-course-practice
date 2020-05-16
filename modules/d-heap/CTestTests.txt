@@ -49,7 +49,7 @@ add_test(
     COMMAND ${APPLICATION} add asdf
 )
 set_tests_properties (${prefix}_can_Catch_Invalid_Number_Throw PROPERTIES
-    PASS_REGULAR_EXPRESSION "(Invalid Argument)"
+    PASS_REGULAR_EXPRESSION "(Cannot parse Number!)"
     LABELS "${MODULE}")	
 	
 	
@@ -59,7 +59,7 @@ add_test(
     COMMAND ${APPLICATION} add -100
 )
 set_tests_properties (${prefix}_can_Catch_Negative_Number_Throw PROPERTIES
-    PASS_REGULAR_EXPRESSION "(Negative number!)"
+    PASS_REGULAR_EXPRESSION "(Negative Number!)"
     LABELS "${MODULE}")	
 
 

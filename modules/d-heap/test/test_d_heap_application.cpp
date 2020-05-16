@@ -79,7 +79,7 @@ TEST_F(DHeapSortTest, Can_Throw_When_Parse_Negative_Element) {
 
   Act(args);
 
-  Assert("Negative number!");
+  Assert("Negative Number!");
 }
 
 TEST_F(DHeapSortTest, Can_Throw_When_Parse_Invalid_Element) {
@@ -87,5 +87,5 @@ TEST_F(DHeapSortTest, Can_Throw_When_Parse_Invalid_Element) {
 
   Act(args);
 
-  Assert("Invalid Argument");
+  Assert("Cannot parse Number!");
 }

@@ -15,18 +15,18 @@ bool d_heap_sort::validateNumberOfArguments(int argc, const char** argv) {
   return true;
 }
 
-int d_heap_sort::ParseOp(const char** Op) {
-  if (strcmp(Op[0], "add") == 0) {
-    int value = ParseArg(Op + 1);
+int d_heap_sort::ParseOp(const char** op) {
+  if (strcmp(op[0], "add") == 0) {
+    int value = ParseArg(op + 1);
     heap.insert(value);
     return 1;
   }
-  if (strcmp(Op[0], "del") == 0) {
-    int value = ParseArg(Op + 1);
+  if (strcmp(op[0], "del") == 0) {
+    int value = ParseArg(op + 1);
     heap.del(heap.getInd(value));
     return 1;
   }
-  if (strcmp(Op[0], "sort") == 0) {
+  if (strcmp(op[0], "sort") == 0) {
     d_heap copy(heap);
     while (copy.getCount() != 0) {
       ret_str += std::to_string(copy[0]) + " ";
@@ -36,7 +36,7 @@ int d_heap_sort::ParseOp(const char** Op) {
     return 0;
   }
 
-  if (strcmp(Op[0], "show") == 0) {
+  if (strcmp(op[0], "show") == 0) {
     int size = heap.getCount();
     for (int i = 0; i < size; ++i)
       ret_str += std::to_string(heap[i]) + " ";
@@ -47,10 +47,10 @@ int d_heap_sort::ParseOp(const char** Op) {
   throw std::string("Bad arguments!");
 }
 
-int d_heap_sort::ParseArg(const char** Arg) {
-  int res = std::atoi(Arg[0]);
-  if (res < 0) throw std::string ("Negative number!");
-  if (res == 0) throw std::string("Invalid Argument");
+int d_heap_sort::ParseArg(const char** arg) {
+  int res = std::atoi(arg[0]);
+  if (res < 0) throw std::string ("Negative Number!");
+  if (res == 0) throw std::string("Cannot parse Number!");
   return res;
 }
 
@@ -70,9 +70,9 @@ std::string d_heap_sort::operator()(int argc, const char** argv) {
   return ret_str;
 }
 
-std::string d_heap_sort::Help(const char** AppName) {
+std::string d_heap_sort::Help(const char** appName) {
   return std::string ("This is D-Heap sorting application\n") +
-         "Please provide arguments in following order\n" + "$ + " + AppName[0] +
+         "Please provide arguments in following order\n" + "$ + " + appName[0] +
          " <Arguments>\n" + "Where Arguments: \n" +
          "add <positive int> - add new element in heap\n" +
          "del <positive int> - delete element using value\n" +
