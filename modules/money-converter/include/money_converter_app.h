@@ -14,11 +14,7 @@ class MoneyCalculator {
     void Help(const char* appname, const char* message = "");
     bool ValidateNumberOfArgs(int argc, const char** argv);
     std::string message_;
-    typedef struct {
-        double value;
-        std::string operation;
-        int side;
-    } Arguments;
+    using Arguments = struct { double value; std::string operation; int side; };
 };
 
 #endif  // MODULES_MONEY_CONVERTER_INCLUDE_MONEY_CONVERTER_APP_H_
