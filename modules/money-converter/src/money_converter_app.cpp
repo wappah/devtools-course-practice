@@ -2,11 +2,9 @@
 
 #include "include/money_converter_app.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <string>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <sstream>
 #include "include/Money_Converter.h"
 
