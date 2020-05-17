@@ -189,7 +189,7 @@ TEST_F(MoneyCalculatorTest, sek_to_rub_minus) {
     // Act
     Act(args);
     // Assert
-	Assert("sek-rub converter: -1");
+    Assert("sek-rub converter: -1");
 }
 
 TEST_F(MoneyCalculatorTest, rub_to_uah) {
