@@ -118,7 +118,7 @@ TEST(test_brazhnikov_eugene_money_converter, Can_Convert_Rub_to_JPY) {
 
     output = converter.rubJPY(input, 0);
 
-    ASSERT_NEAR(145.44, output, 0.1);
+    ASSERT_NEAR(144.92, output, 0.1);
 }
 
 TEST(test_brazhnikov_eugene_money_converter, Can_Convert_JPY_to_RUB) {
@@ -128,7 +128,7 @@ TEST(test_brazhnikov_eugene_money_converter, Can_Convert_JPY_to_RUB) {
 
     output = converter.rubJPY(input, 1);
 
-    ASSERT_DOUBLE_EQ(137.51, output);
+    ASSERT_DOUBLE_EQ(138, output);
 }
 
 TEST(test_brazhnikov_eugene_money_converter, Rub_to_JPY_equal_zero) {
@@ -180,7 +180,7 @@ TEST(test_brazhnikov_eugene_money_converter, Can_Convert_SEK_to_RUB) {
 
     output = converter.rubSEK(input, 1);
 
-    ASSERT_NEAR(10.47, output, 0.1);
+    ASSERT_NEAR(7.45, output, 0.1);
 }
 
 TEST(test_brazhnikov_eugene_money_converter, Rub_to_SEK_equal_zero) {
@@ -208,7 +208,7 @@ TEST(test_brazhnikov_eugene_money_converter, Rub_to_SEK_with_int) {
     double input = 10;
     double output;
 
-    output = converter.rubJPY(input, 0);
+    output = converter.rubSEK(input, 0);
 
     ASSERT_NEAR(1.34, output, 0.1);
 }
