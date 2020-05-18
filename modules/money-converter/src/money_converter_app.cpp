@@ -1,7 +1,8 @@
-// Copyright 2020 Sokova_Anastasia
+// Copyright 2020 Sokova Anastasia
 
 #include "include/money_converter_app.h"
 
+#include <string>
 #include <sstream>
 #include "include/Money_Converter.h"
 
