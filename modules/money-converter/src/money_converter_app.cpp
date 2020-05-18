@@ -71,7 +71,7 @@ std::string MoneyCalculator::operator()(int argc, const char** argv) {
         return message_;
     }
     try {
-        args.value = std::stod(argv[1]);
+        args.value = parseDouble(argv[1]);
         args.operation = parseOperation(argv[2]);
         args.side = static_cast<bool>(std::stod(argv[3]));
     }
