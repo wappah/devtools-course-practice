@@ -13,7 +13,7 @@ double MoneyConverter::rubUSD(const double& curr, bool  whichone) {
     if (whichone)
         return curr / dollarRate;
     else
-        return curr / dollarRate;
+        return curr * dollarRate;
 }
 
 double MoneyConverter::rubEUR(const double& curr, bool whichone) {
@@ -22,7 +22,7 @@ double MoneyConverter::rubEUR(const double& curr, bool whichone) {
     if (whichone)
         return curr / eurRate;
     else
-    return curr / eurRate;
+        return curr * eurRate;
 }
 
 double MoneyConverter::rubJPY(const double& curr, bool whichone) {
@@ -31,7 +31,7 @@ double MoneyConverter::rubJPY(const double& curr, bool whichone) {
     if (whichone)
         return curr / jpyRate;
     else
-        return curr / jpyRate;
+        return curr * jpyRate;
 }
 
 double MoneyConverter::rubSEK(const double& curr, bool whichone) {
@@ -40,7 +40,7 @@ double MoneyConverter::rubSEK(const double& curr, bool whichone) {
     if (whichone)
         return curr / sekRate;
     else
-        return curr / sekRate;
+        return curr * sekRate;
 }
 
 double MoneyConverter::rubUAH(const double& curr, bool whichone) {
@@ -49,5 +49,5 @@ double MoneyConverter::rubUAH(const double& curr, bool whichone) {
     if (whichone)
         return curr / uahRate;
     else
-        return curr / uahRate;
+        return curr * uahRate;
 }
