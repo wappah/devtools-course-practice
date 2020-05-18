@@ -4,7 +4,6 @@
 #define MODULES_MONEY_CONVERTER_INCLUDE_MONEY_CONVERTER_H_
 
 class MoneyConverter {
-   
  public:
     static double rubUSD(const double& curr, bool whichone);
     static double rubEUR(const double& curr, bool whichone);
