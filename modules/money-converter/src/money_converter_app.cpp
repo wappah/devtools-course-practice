@@ -2,10 +2,6 @@
 
 #include "include/money_converter_app.h"
 
-#include <cstdio>
-#include <cstdlib>
-#include <string>
-#include <cstring>
 #include <sstream>
 #include "include/Money_Converter.h"
 
@@ -53,35 +49,19 @@ double parseDouble(const char* arg) {
     return value;
 }
 
-double parseSide(const char* arg) {
-    char* end;
-    double value = strtod(arg, &end);
-
-    if (end[0]) {
-        throw std::string("Wrong number format!");
-    }
-
-    int value1 = static_cast<bool>(value);
-
-    return value1;
-}
-
 std::string parseOperation(const char* arg) {
-    std::string op;
-    if (strcmp(arg, "usd") == 0) {
-        op = "usd";
-    } else if (strcmp(arg, "eur") == 0) {
-        op = "eur";
-    } else if (strcmp(arg, "jpy") == 0) {
-        op = "jpy";
-    } else if (strcmp(arg, "sek") == 0) {
-        op = "sek";
-    } else if (strcmp(arg, "uah") == 0) {
-        op = "uah";
-    } else {
-        throw std::string("Wrong operation format!");
-    }
-    return op;
+    std::string op(arg);
+    if (op == "usd")
+        return op;
+    if (op == "eur")
+        return op;
+    if (op == "jpy")
+        return op;
+    if (op == "sek")
+        return op;
+    if (op == "uah")
+        return op;
+    throw std::string("Wrong operation format!");
 }
 
 std::string MoneyCalculator::operator()(int argc, const char** argv) {
@@ -91,9 +71,9 @@ std::string MoneyCalculator::operator()(int argc, const char** argv) {
         return message_;
     }
     try {
-        args.value = parseDouble(argv[1]);
+        args.value = std::stod(argv[1]);
         args.operation = parseOperation(argv[2]);
-        args.side = parseSide(argv[3]);
+        args.side = static_cast<bool>(std::stod(argv[3]));
     }
     catch (std::string & str) {
         return str;
